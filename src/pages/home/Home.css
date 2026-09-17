@@ -1,0 +1,846 @@
+/* ========================================
+   HOME PAGE
+======================================== */
+
+.home-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f3eee6;
+
+  color: #111111;
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+
+  overflow-x: hidden;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.home-header {
+  width: 100%;
+
+  height: 72px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f3eee6;
+
+  flex-shrink: 0;
+
+  box-sizing: border-box;
+}
+
+/* ========================================
+   HEADER BRAND
+======================================== */
+
+.home-brand {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 11px;
+}
+
+.home-logo-mark {
+  width: 48px;
+  height: 48px;
+
+  display: block;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+.home-brand h1 {
+  margin: 0;
+
+  font-family: "Benton Modern Display", serif;
+
+  font-size: 28px;
+
+  line-height: 1;
+
+  font-weight: 600;
+
+  letter-spacing: 0;
+
+  color: #111111;
+
+  white-space: nowrap;
+}
+
+/* ========================================
+   MAIN CONTENT
+======================================== */
+
+.home-content {
+  width: 100%;
+
+  /*
+    IMPORTANT:
+    Remove the old max-width: 330px.
+
+    The reference uses almost the entire
+    available mobile width.
+  */
+
+  max-width: none;
+
+  margin: 0;
+
+  box-sizing: border-box;
+
+  padding: 10px 14px 82px;
+
+  flex: 1;
+
+  overflow-x: hidden;
+}
+
+/* ========================================
+   SEARCH
+======================================== */
+
+.home-search {
+  width: 100%;
+
+  height: 41px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0 12px;
+
+  background: #fffdf9;
+
+  border: 1px solid #e1dbd4;
+
+  border-radius: 8px;
+}
+
+.home-search > svg {
+  flex-shrink: 0;
+
+  color: #77716c;
+}
+
+.home-search input {
+  flex: 1;
+
+  min-width: 0;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 12px;
+
+  color: #171717;
+}
+
+.home-search input::placeholder {
+  color: #89827c;
+}
+
+.home-search button {
+  width: 25px;
+  height: 25px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #b27b32;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+/* ========================================
+   QUICK ACTIONS
+======================================== */
+
+.quick-actions {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 8px;
+
+  margin-top: 11px;
+}
+
+.quick-actions button {
+  width: 100%;
+
+  height: 45px;
+
+  padding: 0 8px;
+
+  border: 1px solid #e0dad3;
+
+  border-radius: 8px;
+
+  background: #fffdf9;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 10px;
+
+  color: #171717;
+
+  cursor: pointer;
+}
+
+.quick-actions button svg {
+  color: #b27b32;
+
+  flex-shrink: 0;
+}
+
+/* ========================================
+   NEARBY
+======================================== */
+
+.nearby-section {
+  width: 100%;
+
+  margin-top: 16px;
+}
+
+.nearby-card {
+  width: 100%;
+
+  height: 184px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 8px;
+
+  background-image: url("https://images.unsplash.com/photo-1524666041070-9f3e4f8f2b4e?w=900");
+
+  background-size: cover;
+
+  background-position: center;
+}
+
+.nearby-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(25, 25, 25, 0.56);
+
+  z-index: 1;
+}
+
+.nearby-logo {
+  position: absolute;
+
+  top: 9px;
+  left: 9px;
+
+  width: 39px;
+  height: 39px;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  z-index: 3;
+}
+
+.nearby-logo img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.nearby-map-pin {
+  position: absolute;
+
+  left: 50%;
+  top: 43%;
+
+  transform: translate(-50%, -50%);
+
+  color: #b40020;
+
+  z-index: 3;
+}
+
+.nearby-content {
+  position: absolute;
+
+  left: 17px;
+  bottom: 18px;
+
+  z-index: 3;
+
+  color: #ffffff;
+}
+
+.nearby-content h2 {
+  margin: 0 0 4px;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 18px;
+
+  line-height: 1.2;
+
+  font-weight: 500;
+}
+
+.nearby-content p {
+  margin: 0;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 11px;
+
+  line-height: 1.3;
+
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* ========================================
+   SECTION HEADER
+======================================== */
+
+.section-header {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.section-header h2,
+.section-title h2 {
+  margin: 0;
+
+  font-family: "Benton Modern Display", serif;
+
+  font-size: 17px;
+
+  line-height: 1.2;
+
+  font-weight: 500;
+}
+
+.section-title {
+  width: 100%;
+}
+
+/* ========================================
+   COLLECTIONS
+======================================== */
+
+.collections-section {
+  width: 100%;
+
+  margin-top: 18px;
+}
+
+.collection-arrows {
+  display: flex;
+
+  gap: 7px;
+}
+
+.collection-arrows button {
+  width: 29px;
+  height: 29px;
+
+  padding: 0;
+
+  border: 1px solid #e0dad3;
+
+  border-radius: 50%;
+
+  background: #fffdf9;
+
+  color: #171717;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.collections {
+  width: 100%;
+
+  display: flex;
+
+  gap: 14px;
+
+  margin-top: 11px;
+
+  overflow-x: auto;
+
+  scrollbar-width: none;
+}
+
+.collections::-webkit-scrollbar {
+  display: none;
+}
+
+.collection-card {
+  width: 91px;
+
+  min-width: 91px;
+
+  overflow: hidden;
+
+  border-radius: 7px;
+
+  background: #eee8df;
+}
+
+.collection-card > img {
+  width: 91px;
+  height: 92px;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.collection-info {
+  min-height: 42px;
+
+  padding: 6px 7px;
+
+  box-sizing: border-box;
+}
+
+.collection-info h3 {
+  margin: 0;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 10px;
+
+  line-height: 1.15;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.collection-info span {
+  display: block;
+
+  margin-top: 3px;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 8px;
+
+  line-height: 1;
+
+  color: #77716c;
+}
+
+/* ========================================
+   LUDOVICO SIGNATURE
+======================================== */
+
+.signature-section {
+  width: 100%;
+
+  margin-top: 18px;
+}
+
+.signature-card {
+  width: 100%;
+
+  height: 150px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 9px;
+
+  margin-top: 10px;
+}
+
+.signature-card > img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+}
+
+.signature-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.43),
+    rgba(0, 0, 0, 0.05)
+  );
+}
+
+.signature-logo {
+  position: absolute;
+
+  top: 11px;
+  left: 10px;
+
+  width: 43px;
+  height: 43px;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  z-index: 2;
+}
+
+.signature-logo img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+/* ========================================
+   MAKE YOUR OWN COFFEE
+======================================== */
+
+.make-coffee-section {
+  width: 100%;
+
+  margin-top: 19px;
+}
+
+.make-coffee-section .section-title {
+  margin-bottom: 10px;
+}
+
+.make-coffee-card {
+  width: 100%;
+
+  height: 175px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 9px;
+}
+
+.make-coffee-card > img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+}
+
+.make-coffee-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.68),
+    rgba(0, 0, 0, 0.12)
+  );
+}
+
+.make-coffee-content {
+  position: absolute;
+
+  left: 17px;
+  top: 20px;
+
+  color: #ffffff;
+
+  z-index: 2;
+}
+
+.make-coffee-content > span {
+  font-family: "Inter", sans-serif;
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  font-weight: 600;
+}
+
+.make-coffee-content h3 {
+  margin: 7px 0 5px;
+
+  font-family: "Benton Modern Display", serif;
+
+  font-size: 24px;
+
+  line-height: 1.05;
+
+  font-weight: 500;
+}
+
+.make-coffee-content p {
+  max-width: 210px;
+
+  margin: 0 0 13px;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 10px;
+
+  line-height: 1.4;
+}
+
+.make-coffee-content button {
+  height: 31px;
+
+  padding: 0 13px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background: #c00020;
+
+  color: #ffffff;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+/* ========================================
+   BEST SELLERS
+======================================== */
+
+.best-sellers-section {
+  width: 100%;
+
+  margin-top: 19px;
+}
+
+.best-sellers {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 9px;
+
+  margin-top: 11px;
+}
+
+.best-seller-card {
+  min-width: 0;
+
+  text-align: center;
+}
+
+.best-seller-image {
+  width: 100%;
+
+  aspect-ratio: 1;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  background: #eee8df;
+}
+
+.best-seller-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.best-seller-card h3 {
+  margin: 6px 0 0;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 9px;
+
+  line-height: 1.2;
+
+  font-weight: 500;
+}
+
+.see-all-button {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #c00020;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+/* ========================================
+   BOTTOM NAVIGATION
+======================================== */
+
+.bottom-navigation {
+  position: fixed;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 64px;
+
+  padding: 5px 22px 7px;
+
+  box-sizing: border-box;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  background: #fffdf9;
+
+  border-top: 1px solid #e4ded7;
+
+  z-index: 100;
+}
+
+.bottom-navigation button {
+  border: none;
+
+  background: transparent;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 3px;
+
+  color: #7d756e;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 8px;
+
+  cursor: pointer;
+}
+
+.bottom-navigation button.active {
+  color: #c00020;
+}
+
+.bottom-navigation button svg {
+  stroke-width: 1.7;
+}
+
+/* ========================================
+   VERY SMALL SCREENS
+======================================== */
+
+@media (max-width: 360px) {
+  .home-content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .home-brand h1 {
+    font-size: 25px;
+  }
+
+  .home-logo-mark {
+    width: 44px;
+    height: 44px;
+  }
+}

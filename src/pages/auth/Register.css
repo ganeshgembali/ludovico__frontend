@@ -1,0 +1,464 @@
+.register-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #fffcf7;
+
+  display: flex;
+  justify-content: center;
+}
+
+.register-container {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+
+  padding: 0 29px 26px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.register-header {
+  width: 100vw;
+  height: 74px;
+
+  margin-left: calc(50% - 50vw);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f3eee6;
+
+  margin-bottom: 32px;
+}
+
+.register-logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.register-logo-mark {
+  width: 43px;
+  height: 43px;
+
+  display: block;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+.register-logo-text h1 {
+  margin: 0;
+  font-family: "Benton Modern Display", serif;
+
+  font-size: 19px;
+  line-height: 1;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  color: #111111;
+}
+
+.register-logo-text span {
+  display: block;
+
+  margin-top: 4px;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 8px;
+  letter-spacing: 2.2px;
+
+  color: #77716c;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.register-content {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.register-content h2 {
+  font-family: "Benton Modern Display", serif;
+
+  font-size: 37px;
+  line-height: 1.08;
+
+  font-weight: 600;
+
+  color: #111111;
+
+  margin-bottom: 10px;
+}
+
+.register-subtitle {
+  font-family: "Inter", sans-serif;
+
+  font-size: 15px;
+  line-height: 1.5;
+
+  color: #77716c;
+
+  margin-bottom: 31px;
+}
+
+/* =========================
+   ERROR
+========================= */
+
+.register-error {
+  background: #fce8eb;
+  color: #a90020;
+
+  border-radius: 7px;
+
+  padding: 11px 12px;
+
+  margin-bottom: 17px;
+
+  font-size: 13px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+/* =========================
+   FORM
+========================= */
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 14px;
+}
+
+.input-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 52px;
+}
+
+.input-wrapper input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 44px;
+
+  border: 1px solid #d9d3cc;
+  border-radius: 8px;
+
+  background: #fffdf9;
+
+  outline: none;
+
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+
+  color: #222222;
+
+  transition: border-color 0.2s ease;
+}
+
+.input-wrapper input:focus {
+  border-color: #b40020;
+}
+
+.input-wrapper input::placeholder {
+  color: #77716c;
+  opacity: 1;
+}
+
+/* =========================
+   LEFT INPUT ICON
+========================= */
+
+.input-icon {
+  position: absolute;
+
+  left: 14px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #77716c;
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+/* =========================
+   PASSWORD EYE BUTTON
+========================= */
+
+.password-toggle {
+  position: absolute;
+
+  right: 12px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 30px;
+  height: 30px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #77716c;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  z-index: 3;
+}
+
+.password-toggle:hover {
+  color: #333333;
+}
+
+.password-toggle:focus {
+  outline: none;
+}
+
+/* =========================
+   OR DIVIDER
+========================= */
+
+.register-divider {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  margin: 14px 0 27px;
+
+  color: #77716c;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 11px;
+}
+
+.register-divider::before,
+.register-divider::after {
+  content: "";
+
+  flex: 1;
+
+  height: 1px;
+
+  background: #ded8d0;
+}
+
+/* =========================
+   GOOGLE
+========================= */
+
+.google-login {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 27px;
+}
+
+.google-login > div {
+  width: 100% !important;
+}
+
+/* =========================
+   TERMS
+========================= */
+
+.terms-checkbox {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 9px;
+
+  margin-bottom: 19px;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.45;
+
+  color: #77716c;
+}
+
+.terms-checkbox input {
+  width: 16px;
+  height: 16px;
+
+  margin-top: 1px;
+
+  flex-shrink: 0;
+
+  accent-color: #b40020;
+}
+
+.terms-checkbox a {
+  color: #28231f;
+
+  text-decoration: underline;
+}
+
+/* =========================
+   CREATE ACCOUNT
+========================= */
+
+.create-account-button {
+  width: 100%;
+
+  height: 53px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #b40020;
+
+  color: #ffffff;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+}
+
+.create-account-button:hover {
+  background: #97001b;
+}
+
+.create-account-button:active {
+  transform: scale(0.99);
+}
+
+.create-account-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================
+   SIGN IN
+========================= */
+
+.signin-link {
+  text-align: center;
+
+  margin-top: 17px;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 14px;
+
+  color: #77716c;
+}
+
+.signin-link a {
+  color: #b40020;
+
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.signin-link a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 430px) {
+  .register-container {
+    padding-left: 29px;
+    padding-right: 29px;
+  }
+}
+
+/* =========================
+   SHORT SCREENS
+========================= */
+
+@media (max-height: 700px) {
+  .register-container {
+    padding-top: 24px;
+    padding-bottom: 20px;
+  }
+
+  .register-header {
+    margin-bottom: 30px;
+  }
+
+  .register-content h2 {
+    font-size: 31px;
+  }
+
+  .register-subtitle {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 9px;
+  }
+
+  .form-group input {
+    height: 45px;
+  }
+
+  .register-divider {
+    margin-top: 9px;
+    margin-bottom: 18px;
+  }
+
+  .google-login {
+    margin-bottom: 17px;
+  }
+
+  .terms-checkbox {
+    margin-bottom: 13px;
+  }
+
+  .create-account-button {
+    height: 48px;
+  }
+}
