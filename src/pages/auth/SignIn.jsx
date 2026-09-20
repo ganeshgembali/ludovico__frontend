@@ -1,24 +1,22 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
-import { UserRound, Mail, LockKeyhole, Eye, EyeOff } from "lucide-react";
+import { Mail, LockKeyhole, Eye, EyeOff } from "lucide-react";
 
 import { useAuth } from "../../hooks/useAuth";
 
-import "./Register.css";
+import "./SignIn.css";
 
-const Register = () => {
+const SignIn = () => {
   const navigate = useNavigate();
 
-  const { register, loginWithGoogle } = useAuth();
+  const { login, loginWithGoogle } = useAuth();
 
   const [formData, setFormData] = useState({
-    name: "",
     email: "",
     password: "",
   });
 
-  const [termsAccepted, setTermsAccepted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -37,25 +35,17 @@ const Register = () => {
 
     setError("");
 
-    if (!termsAccepted) {
-      setError("Please accept the terms and conditions.");
-      return;
-    }
-
     try {
       setLoading(true);
 
-      await register(formData);
+      await login(formData);
 
-      navigate("/verify-email", {
-        state: {
-          email: formData.email,
-        },
-      });
+      // Login successful → Enable Location
+      navigate("/enable-location");
     } catch (error) {
       setError(
         error.response?.data?.message ||
-          "Unable to create your account. Please try again.",
+          "Unable to sign in. Please check your credentials.",
       );
     } finally {
       setLoading(false);
@@ -80,18 +70,18 @@ const Register = () => {
   };
 
   return (
-    <main className="register-page">
-      <div className="register-container">
+    <main className="signin-page">
+      <div className="signin-container">
         {/* Logo */}
-        <header className="register-header">
-          <div className="register-logo">
+        <header className="signin-header">
+          <div className="signin-logo">
             <img
               src="/ludovico-logo.jpeg"
               alt="Ludovico logo"
-              className="register-logo-mark"
+              className="signin-logo-mark"
             />
 
-            <div className="register-logo-text">
+            <div className="signin-logo-text">
               <h1>LUDOVICO</h1>
               <span>COFFEE</span>
             </div>
@@ -99,33 +89,18 @@ const Register = () => {
         </header>
 
         {/* Main Content */}
-        <section className="register-content">
-          <h2>Create your account</h2>
+        <section className="signin-content">
+          <h2>Welcome back</h2>
 
-          <p className="register-subtitle">
-            Join Ludovico for a faster, smoother coffee experience.
+          <p className="signin-subtitle">
+            Sign in to continue your Ludovico coffee experience.
           </p>
 
-          {error && <p className="register-error">{error}</p>}
+          {error && <p className="signin-error">{error}</p>}
 
-          {/* Input Form */}
-          <form onSubmit={handleSubmit} className="register-form">
-            <div className="form-group">
-              <div className="input-wrapper">
-                <UserRound className="input-icon" size={18} strokeWidth={1.5} />
-
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  placeholder="Full name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-            </div>
-
+          {/* Sign In Form */}
+          <form onSubmit={handleSubmit} className="signin-form">
+            {/* Email */}
             <div className="form-group">
               <div className="input-wrapper">
                 <Mail className="input-icon" size={18} strokeWidth={1.5} />
@@ -142,6 +117,7 @@ const Register = () => {
               </div>
             </div>
 
+            {/* Password */}
             <div className="form-group">
               <div className="input-wrapper">
                 <LockKeyhole
@@ -175,8 +151,18 @@ const Register = () => {
               </div>
             </div>
 
+            {/* Forgot Password */}
+            <div className="forgot-password">
+              <Link to="/forgot-password">Forgot password?</Link>
+            </div>
+
+            {/* Sign In */}
+            <button type="submit" className="signin-button" disabled={loading}>
+              {loading ? "Signing in..." : "Sign In"}
+            </button>
+
             {/* OR */}
-            <div className="register-divider">
+            <div className="signin-divider">
               <span>OR</span>
             </div>
 
@@ -194,34 +180,11 @@ const Register = () => {
                 width="100%"
               />
             </div>
-
-            {/* Terms */}
-            <label className="terms-checkbox">
-              <input
-                type="checkbox"
-                checked={termsAccepted}
-                onChange={(event) => setTermsAccepted(event.target.checked)}
-              />
-
-              <span>
-                I agree to the <a href="#terms">Terms of Service</a> and{" "}
-                <a href="#privacy">Privacy Policy</a>.
-              </span>
-            </label>
-
-            {/* Create Account */}
-            <button
-              type="submit"
-              className="create-account-button"
-              disabled={loading}
-            >
-              {loading ? "Creating account..." : "Create Account"}
-            </button>
           </form>
 
-          {/* Sign In */}
-          <p className="signin-link">
-            Already have an account? <Link to="/signin">Sign in</Link>
+          {/* Register */}
+          <p className="register-link">
+            Don't have an account? <Link to="/register">Create an account</Link>
           </p>
         </section>
       </div>
@@ -229,4 +192,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default SignIn;

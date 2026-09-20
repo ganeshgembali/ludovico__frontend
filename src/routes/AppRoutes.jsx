@@ -1,18 +1,15 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import ProtectedRoute from "./ProtectedRoute";
+import SignIn from "../pages/auth/SignIn";
 import Register from "../pages/auth/Register";
 import VerifyEmail from "../pages/auth/VerifyEmail";
+import EnableLocation from "../pages/auth/EnableLocation";
 import Welcome from "../pages/auth/Welcome";
 import Home from "../pages/home/Home";
 
-const SignIn = () => <div>Sign In</div>;
-
-
-
 const ForgotPassword = () => <div>Forgot Password</div>;
 const ResetPassword = () => <div>Reset Password</div>;
-
 
 const Products = () => <div>Products</div>;
 const ProductDetails = () => <div>Product Details</div>;
@@ -29,6 +26,7 @@ const AppRoutes = () => {
       <Route path="/signin" element={<SignIn />} />
       <Route path="/register" element={<Register />} />
       <Route path="/verify-email" element={<VerifyEmail />} />
+      <Route path="/enable-location" element={<EnableLocation />} />
       <Route path="/welcome" element={<Welcome />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset-password" element={<ResetPassword />} />

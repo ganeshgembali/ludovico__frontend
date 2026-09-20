@@ -1,0 +1,582 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@1,300&display=swap");
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.splash {
+  --splash-bg: #9e0002;
+  --splash-ink: #fefefe;
+  --splash-reveal: #f3eee6;
+  --s: 1;
+  --knight: clamp(22px, 6.5vmin, 34px);
+
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  overflow: hidden;
+
+  background: var(--splash-bg);
+  color: var(--splash-ink);
+
+  cursor: pointer;
+
+  overscroll-behavior: contain;
+  touch-action: none;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =====================================================
+   LOGO COLORS
+===================================================== */
+
+.splash-mark__ink {
+  fill: var(--splash-ink);
+}
+
+.splash-mark__cut {
+  fill: var(--splash-bg);
+}
+
+/* =====================================================
+   MAIN STAGE
+===================================================== */
+
+.splash__stage {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding-bottom: 6vh;
+
+  animation:
+    splash-rise calc(1.5s * var(--s)) cubic-bezier(0.16, 1, 0.3, 1)
+      calc(0.5s * var(--s)) both,
+    splash-exit calc(1s * var(--s)) cubic-bezier(0.6, 0, 0.85, 0.35)
+      calc(3.6s * var(--s)) forwards;
+}
+
+/* =====================================================
+   KNIGHT LOGO
+===================================================== */
+
+.splash__logo {
+  position: relative;
+
+  width: clamp(190px, min(62vw, 42vh), 340px);
+
+  aspect-ratio: 260 / 256;
+
+  animation: splash-grow calc(1.5s * var(--s)) cubic-bezier(0.16, 1, 0.3, 1)
+    calc(0.5s * var(--s)) both;
+}
+
+.splash__mark {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+}
+
+/* =====================================================
+   INDIVIDUAL LOGO PIECES
+===================================================== */
+
+.splash-piece {
+  transform-box: fill-box;
+  transform-origin: center;
+
+  will-change: transform, opacity;
+
+  animation-name: splash-piece-assemble;
+
+  animation-duration: calc(2s * var(--s));
+
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+
+  animation-fill-mode: both;
+}
+
+/* =====================================================
+   PIECE 1
+===================================================== */
+
+.splash-piece:nth-of-type(1) {
+  --sx: -95px;
+  --sy: -75px;
+  --sr: -18deg;
+
+  animation-delay: calc(0.72s * var(--s));
+}
+
+/* =====================================================
+   PIECE 2
+===================================================== */
+
+.splash-piece:nth-of-type(2) {
+  --sx: -80px;
+  --sy: -105px;
+  --sr: -12deg;
+
+  animation-delay: calc(0.82s * var(--s));
+}
+
+/* =====================================================
+   PIECE 3
+===================================================== */
+
+.splash-piece:nth-of-type(3) {
+  --sx: 105px;
+  --sy: -65px;
+  --sr: 18deg;
+
+  animation-delay: calc(0.76s * var(--s));
+}
+
+/* =====================================================
+   PIECE 4
+===================================================== */
+
+.splash-piece:nth-of-type(4) {
+  --sx: 120px;
+  --sy: -30px;
+  --sr: 15deg;
+
+  animation-delay: calc(0.9s * var(--s));
+}
+
+/* =====================================================
+   PIECE 5
+===================================================== */
+
+.splash-piece:nth-of-type(5) {
+  --sx: 105px;
+  --sy: 25px;
+  --sr: 12deg;
+
+  animation-delay: calc(0.96s * var(--s));
+}
+
+/* =====================================================
+   PIECE 6
+===================================================== */
+
+.splash-piece:nth-of-type(6) {
+  --sx: 115px;
+  --sy: 65px;
+  --sr: 15deg;
+
+  animation-delay: calc(0.86s * var(--s));
+}
+
+/* =====================================================
+   PIECE 7
+===================================================== */
+
+.splash-piece:nth-of-type(7) {
+  --sx: 75px;
+  --sy: 105px;
+  --sr: 10deg;
+
+  animation-delay: calc(1s * var(--s));
+}
+
+/* =====================================================
+   PIECE 8
+===================================================== */
+
+.splash-piece:nth-of-type(8) {
+  --sx: -75px;
+  --sy: 80px;
+  --sr: -15deg;
+
+  animation-delay: calc(0.88s * var(--s));
+}
+
+/* =====================================================
+   PIECE 9
+===================================================== */
+
+.splash-piece:nth-of-type(9) {
+  --sx: -45px;
+  --sy: 110px;
+  --sr: -10deg;
+
+  animation-delay: calc(0.98s * var(--s));
+}
+
+/* =====================================================
+   PIECE 10
+===================================================== */
+
+.splash-piece:nth-of-type(10) {
+  --sx: -125px;
+  --sy: -20px;
+  --sr: -25deg;
+
+  animation-delay: calc(0.74s * var(--s));
+}
+
+/* =====================================================
+   PIECE 11
+===================================================== */
+
+.splash-piece:nth-of-type(11) {
+  --sx: -90px;
+  --sy: 125px;
+  --sr: -15deg;
+
+  animation-delay: calc(1.02s * var(--s));
+}
+
+/* =====================================================
+   PIECE 12
+===================================================== */
+
+.splash-piece:nth-of-type(12) {
+  --sx: 95px;
+  --sy: 125px;
+  --sr: 15deg;
+
+  animation-delay: calc(0.94s * var(--s));
+}
+
+/* =====================================================
+   PIECE 13
+===================================================== */
+
+.splash-piece:nth-of-type(13) {
+  --sx: -135px;
+  --sy: 35px;
+  --sr: -22deg;
+
+  animation-delay: calc(0.78s * var(--s));
+}
+
+/* =====================================================
+   PIECE 14
+===================================================== */
+
+.splash-piece:nth-of-type(14) {
+  --sx: -145px;
+  --sy: -35px;
+  --sr: -20deg;
+
+  animation-delay: calc(0.84s * var(--s));
+}
+
+/* =====================================================
+   PIECE 15
+===================================================== */
+
+.splash-piece:nth-of-type(15) {
+  --sx: 145px;
+  --sy: 45px;
+  --sr: 20deg;
+
+  animation-delay: calc(0.82s * var(--s));
+}
+
+/* =====================================================
+   PIECE 16
+===================================================== */
+
+.splash-piece:nth-of-type(16) {
+  --sx: 140px;
+  --sy: -50px;
+  --sr: 20deg;
+
+  animation-delay: calc(0.88s * var(--s));
+}
+
+/* =====================================================
+   PIECE 17
+===================================================== */
+
+.splash-piece:nth-of-type(17) {
+  --sx: 0px;
+  --sy: -130px;
+  --sr: 0deg;
+
+  animation-delay: calc(0.96s * var(--s));
+}
+
+/* =====================================================
+   PIECE ASSEMBLY
+===================================================== */
+
+@keyframes splash-piece-assemble {
+  from {
+    opacity: 0;
+
+    transform: translate(var(--sx), var(--sy)) rotate(var(--sr));
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+/* =====================================================
+   MAIN STAGE RISE
+===================================================== */
+
+@keyframes splash-rise {
+  from {
+    transform: translateY(42vh);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   STAGE EXIT
+===================================================== */
+
+@keyframes splash-exit {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-115vh);
+  }
+}
+
+/* =====================================================
+   LOGO GROW
+===================================================== */
+
+@keyframes splash-grow {
+  from {
+    transform: scale(0.8);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+/* =====================================================
+   TITLE + TAGLINE
+===================================================== */
+
+.splash__title,
+.splash__tagline {
+  margin: 0;
+
+  text-align: center;
+
+  opacity: 0;
+}
+
+/* TITLE */
+
+.splash__title {
+  margin-top: clamp(14px, 3.4vh, 30px);
+
+  font-family: "Bebas Neue", "Oswald", Impact, "Arial Narrow", sans-serif;
+
+  font-weight: 400;
+
+  font-size: clamp(2.4rem, 6vmin, 2.9rem);
+
+  line-height: 1;
+
+  letter-spacing: 0.14em;
+
+  padding-left: 0.14em;
+
+  animation: splash-fade calc(0.7s * var(--s)) ease-out calc(0.6s * var(--s))
+    forwards;
+}
+
+/* TAGLINE */
+
+.splash__tagline {
+  margin-top: 0.8em;
+
+  font-family: "Montserrat", system-ui, sans-serif;
+
+  font-style: italic;
+
+  font-weight: 300;
+
+  font-size: clamp(0.62rem, 1.8vmin, 0.85rem);
+
+  letter-spacing: 0.08em;
+
+  animation: splash-fade calc(0.7s * var(--s)) ease-out calc(0.75s * var(--s))
+    forwards;
+}
+
+@keyframes splash-fade {
+  to {
+    opacity: 1;
+  }
+}
+
+/* =====================================================
+   LOADER
+===================================================== */
+
+.splash__loader {
+  position: absolute;
+
+  left: 9%;
+  right: 9%;
+
+  bottom: calc(max(7vh, 28px) + env(safe-area-inset-bottom, 0px));
+
+  height: var(--knight);
+}
+
+/* LOADER FILL */
+
+.splash__fill {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  height: 100%;
+
+  width: 0;
+
+  animation: splash-load calc(1.4s * var(--s)) cubic-bezier(0.65, 0, 0.35, 1)
+    calc(2s * var(--s)) forwards;
+}
+
+/* LOADING LINE */
+
+.splash__line {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 0;
+
+  height: 1.5px;
+
+  background: var(--splash-ink);
+}
+
+/* SMALL KNIGHT */
+
+.splash__knight {
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+
+  width: var(--knight);
+  height: auto;
+
+  transform: translateX(100%);
+
+  opacity: 0;
+
+  animation: splash-fade calc(0.5s * var(--s)) ease-out calc(0.9s * var(--s))
+    forwards;
+}
+
+/* LOADER ANIMATION */
+
+@keyframes splash-load {
+  to {
+    width: calc(100% - var(--knight));
+  }
+}
+
+/* =====================================================
+   FINAL WHITE CIRCULAR REVEAL
+===================================================== */
+
+.splash__reveal {
+  position: absolute;
+
+  inset: 0;
+
+  background: var(--splash-reveal);
+
+  /*
+    IMPORTANT:
+    Circle begins completely
+    outside the bottom-left.
+  */
+
+  clip-path: circle(0% at 0% 100%);
+
+  animation: splash-reveal calc(1.2s * var(--s)) cubic-bezier(0.7, 0, 0.3, 1)
+    calc(3.6s * var(--s)) forwards;
+}
+
+@keyframes splash-reveal {
+  to {
+    clip-path: circle(145% at 0% 100%);
+  }
+}
+
+/* =====================================================
+   MOBILE / DESKTOP
+===================================================== */
+
+@media (max-width: 599px) {
+  .splash {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .splash__stage,
+  .splash__logo,
+  .splash-piece,
+  .splash__title,
+  .splash__tagline,
+  .splash__fill,
+  .splash__knight,
+  .splash__reveal {
+    animation: none !important;
+  }
+
+  .splash__title,
+  .splash__tagline {
+    opacity: 1;
+  }
+
+  .splash__fill {
+    width: 100%;
+  }
+
+  .splash__reveal {
+    clip-path: none;
+    display: none;
+  }
+}

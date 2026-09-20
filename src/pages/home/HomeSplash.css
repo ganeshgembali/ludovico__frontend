@@ -1,0 +1,131 @@
+/* ========================================
+   HOME SPLASH TRANSITION
+   Played when arriving from the Welcome page.
+
+   Phases (set as data-phase on .home-page):
+   - hold : white splash, lockup centred, Home hidden
+   - fly  : lockup flies into the header, Home fades in
+   - done : splash removed, nothing here applies
+
+   Timings here should match the constants at the
+   top of Home.jsx (SPLASH_FLY_MS = 380).
+======================================== */
+
+/* ---------- HOME PAGE (fade in) ---------- */
+
+.home-page[data-phase="hold"] {
+  opacity: 0;
+}
+
+.home-page[data-phase="fly"] {
+  opacity: 1;
+
+  transition: opacity 320ms ease-out;
+}
+
+/* ---------- HEADER BRAND ----------
+   The real header logo stays hidden until the splash
+   logo lands exactly on top of it, so there is no jump.
+   The real title cross-fades in while the splash
+   wordmark cross-fades out. */
+
+.home-page[data-phase="hold"] .home-logo-mark,
+.home-page[data-phase="fly"] .home-logo-mark {
+  opacity: 0;
+}
+
+.home-page[data-phase="hold"] .home-brand h1 {
+  opacity: 0;
+}
+
+.home-page[data-phase="fly"] .home-brand h1 {
+  opacity: 1;
+
+  transition: opacity 240ms ease 90ms;
+}
+
+/* ---------- SPLASH OVERLAY ---------- */
+
+.splash {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /*
+    Pushes the lockup's centre to ~40% of the screen
+    height, matching the reference recording.
+  */
+  padding-bottom: 20vh;
+
+  box-sizing: border-box;
+
+  background-color: #ffffff;
+
+  transition: background-color 280ms ease-out;
+}
+
+.splash--fly {
+  background-color: rgba(255, 255, 255, 0);
+
+  pointer-events: none;
+}
+
+.splash-lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 18px;
+}
+
+.splash-logo {
+  width: clamp(110px, 37vw, 150px);
+  height: clamp(110px, 37vw, 150px);
+
+  display: block;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  transform-origin: center center;
+
+  will-change: transform;
+}
+
+/*
+  The splash wordmark in the reference is a rounded
+  sans-serif. Swap the font-family below for your brand
+  font if you have one.
+*/
+.splash-text {
+  display: inline-block;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 30px;
+
+  line-height: 1.1;
+
+  font-weight: 600;
+
+  color: #111111;
+
+  white-space: nowrap;
+
+  transform-origin: center center;
+
+  will-change: transform, opacity;
+}
+
+.splash--fly .splash-text {
+  opacity: 0;
+
+  transition: opacity 240ms ease 90ms;
+}
