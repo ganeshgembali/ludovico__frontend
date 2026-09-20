@@ -127,19 +127,16 @@ const Home = () => {
         <div className="quick-actions">
           <button type="button">
             <QrCode size={18} strokeWidth={1.7} />
-
             <span>Scanner</span>
           </button>
 
           <button type="button">
             <ShoppingCart size={20} strokeWidth={1.7} />
-
             <span>My Orders</span>
           </button>
 
           <button type="button">
             <Gift size={19} strokeWidth={1.7} />
-
             <span>Rewards</span>
           </button>
         </div>
@@ -162,7 +159,6 @@ const Home = () => {
 
             <div className="nearby-content">
               <h2>Find a Ludovico near you</h2>
-
               <p>Explore nearby vending machines</p>
             </div>
           </div>
@@ -194,7 +190,6 @@ const Home = () => {
 
                 <div className="collection-info">
                   <h3>{collection.name}</h3>
-
                   <span>{collection.type}</span>
                 </div>
               </article>
@@ -288,25 +283,21 @@ const Home = () => {
       <nav className="bottom-navigation">
         <button type="button" className="active">
           <HomeIcon size={20} />
-
           <span>Home</span>
         </button>
 
         <button type="button" onClick={() => navigate("/offers")}>
           <Tag size={20} />
-
           <span>Offers</span>
         </button>
 
         <button type="button" onClick={() => navigate("/categories")}>
           <Grid2X2 size={20} />
-
           <span>Categories</span>
         </button>
 
         <button type="button" onClick={() => navigate("/account")}>
           <UserRound size={20} />
-
           <span>Account</span>
         </button>
       </nav>

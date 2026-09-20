@@ -1,19 +1,34 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+
+import WelcomeTransition from "../../components/WelcomeTransition/WelcomeTransition";
 
 import "./Welcome.css";
 
 const Welcome = () => {
   const navigate = useNavigate();
+  const [showTransition, setShowTransition] = useState(false);
 
   const handleExplore = () => {
-    navigate("/home");
+    console.log("🔥 EXPLORE BUTTON CLICKED");
+    setShowTransition(true);
   };
+
+  if (showTransition) {
+    return (
+      <WelcomeTransition
+        onComplete={() => {
+          navigate("/home", { replace: true });
+        }}
+      />
+    );
+  }
 
   return (
     <main className="welcome-page">
       <div className="welcome-container">
-        {/* Header */}
+        {/* HEADER */}
 
         <header className="welcome-header">
           <button
@@ -39,7 +54,7 @@ const Welcome = () => {
           </div>
         </header>
 
-        {/* Welcome Content */}
+        {/* CONTENT */}
 
         <section className="welcome-content">
           <h2>You're all set!</h2>
@@ -50,8 +65,6 @@ const Welcome = () => {
             just a tap away.
           </p>
 
-          {/* Robot */}
-
           <div className="welcome-robot-container">
             <img
               src="/welcome-robot.png"
@@ -59,8 +72,6 @@ const Welcome = () => {
               className="welcome-robot"
             />
           </div>
-
-          {/* Explore */}
 
           <button
             type="button"

@@ -136,7 +136,7 @@ const VerifyEmail = () => {
         otp: otpValue,
       });
 
-      navigate("/welcome");
+      navigate("/enable-location");
     } catch (error) {
       setError(
         error.response?.data?.message ||
