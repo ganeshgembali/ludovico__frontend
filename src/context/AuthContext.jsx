@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import {
   loginUser,
   registerUser,
@@ -10,19 +11,9 @@ import {
   resetPassword,
 } from "../api/authApi";
 
-import {
-  mockRegister,
-  mockVerifyEmail,
-  mockResendOtp,
-  mockCurrentUser,
-} from "../mock/authMock";
-
 import { AuthContext } from "./AuthContextDefinition";
 
-const USE_MOCK_AUTH = true;
-
 export const AuthProvider = ({ children }) => {
-  
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -36,9 +27,7 @@ export const AuthProvider = ({ children }) => {
       }
 
       try {
-        const response = USE_MOCK_AUTH
-          ? await mockCurrentUser()
-          : await getCurrentUser();
+        const response = await getCurrentUser();
         setUser(response.data.data);
       } catch (error) {
         console.log(error);
@@ -64,17 +53,11 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (data) => {
-    if (USE_MOCK_AUTH) {
-      return await mockRegister(data);
-    }
-
     return await registerUser(data);
   };
 
   const verifyUserEmail = async (data) => {
-    const response = USE_MOCK_AUTH
-      ? await mockVerifyEmail(data)
-      : await verifyEmail(data);
+    const response = await verifyEmail(data);
 
     const token = response.data.data.token;
 
@@ -85,10 +68,6 @@ export const AuthProvider = ({ children }) => {
   };
 
   const resendVerificationOtp = async (data) => {
-    if (USE_MOCK_AUTH) {
-      return await mockResendOtp(data);
-    }
-
     return await resendOtp(data);
   };
 
