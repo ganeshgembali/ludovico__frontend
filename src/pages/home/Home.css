@@ -844,3 +844,411 @@
     height: 44px;
   }
 }
+/* ========================================
+   TABLET / LAPTOP RESPONSIVE LAYOUT
+   Mobile styles above remain unchanged.
+======================================== */
+
+@media (min-width: 768px) {
+  /* ========================================
+     PAGE
+  ======================================== */
+
+  .home-page {
+    min-height: 100vh;
+  }
+
+  /* ========================================
+     HEADER
+  ======================================== */
+
+  .home-header {
+    height: 88px;
+  }
+
+  .home-brand {
+    gap: 13px;
+  }
+
+  .home-logo-mark {
+    width: 52px;
+    height: 52px;
+  }
+
+  .home-brand h1 {
+    font-size: 32px;
+  }
+
+  /* ========================================
+     MAIN CONTENT
+  ======================================== */
+
+  .home-content {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 20px 32px 110px;
+    box-sizing: border-box;
+  }
+
+  /* ========================================
+     SEARCH
+  ======================================== */
+
+  .home-search {
+    max-width: 720px;
+    height: 48px;
+    margin: 0 auto;
+    padding: 0 16px;
+    border-radius: 10px;
+  }
+
+  .home-search input {
+    font-size: 13px;
+  }
+
+  .home-search button {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* ========================================
+     QUICK ACTIONS
+  ======================================== */
+
+  .quick-actions {
+    max-width: 720px;
+    margin: 16px auto 0;
+    gap: 12px;
+  }
+
+  .quick-actions button {
+    height: 52px;
+    border-radius: 10px;
+    gap: 9px;
+    font-size: 12px;
+  }
+
+  /* ========================================
+     NEARBY
+  ======================================== */
+
+  .nearby-section {
+    margin-top: 28px;
+  }
+
+  .nearby-card {
+    height: 260px;
+    border-radius: 12px;
+  }
+
+  .nearby-logo {
+    top: 16px;
+    left: 16px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .nearby-map-pin {
+    top: 45%;
+  }
+
+  .nearby-content {
+    left: 28px;
+    bottom: 26px;
+  }
+
+  .nearby-content h2 {
+    margin-bottom: 6px;
+    font-size: 25px;
+  }
+
+  .nearby-content p {
+    font-size: 13px;
+  }
+
+  /* ========================================
+     SECTION HEADERS
+  ======================================== */
+
+  .section-header h2,
+  .section-title h2 {
+    font-size: 22px;
+  }
+
+  /* ========================================
+     COLLECTIONS
+  ======================================== */
+
+  .collections-section {
+    margin-top: 32px;
+  }
+
+  .collection-arrows {
+    gap: 8px;
+  }
+
+  .collection-arrows button {
+    width: 34px;
+    height: 34px;
+  }
+
+  .collections {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 16px;
+    overflow-x: visible;
+  }
+
+  .collection-card {
+    width: 100%;
+    min-width: 0;
+    border-radius: 10px;
+  }
+
+  .collection-card > img {
+    width: 100%;
+    height: 190px;
+  }
+
+  .collection-info {
+    min-height: 60px;
+    padding: 10px 12px;
+  }
+
+  .collection-info h3 {
+    font-size: 13px;
+  }
+
+  .collection-info span {
+    margin-top: 5px;
+    font-size: 10px;
+  }
+
+  /* ========================================
+     LUDOVICO SIGNATURE
+  ======================================== */
+
+  .signature-section {
+    margin-top: 34px;
+  }
+
+  .signature-card {
+    height: 260px;
+    margin-top: 14px;
+    border-radius: 12px;
+  }
+
+  .signature-logo {
+    top: 16px;
+    left: 16px;
+    width: 52px;
+    height: 52px;
+  }
+
+  /* ========================================
+     MAKE YOUR OWN COFFEE
+  ======================================== */
+
+  .make-coffee-section {
+    margin-top: 34px;
+  }
+
+  .make-coffee-section .section-title {
+    margin-bottom: 14px;
+  }
+
+  .make-coffee-card {
+    height: 280px;
+    border-radius: 12px;
+  }
+
+  .make-coffee-content {
+    left: 30px;
+    top: 34px;
+  }
+
+  .make-coffee-content > span {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+  }
+
+  .make-coffee-content h3 {
+    margin: 10px 0 8px;
+    font-size: 34px;
+  }
+
+  .make-coffee-content p {
+    max-width: 320px;
+    margin-bottom: 18px;
+    font-size: 13px;
+  }
+
+  .make-coffee-content button {
+    height: 38px;
+    padding: 0 18px;
+    border-radius: 7px;
+    font-size: 12px;
+  }
+
+  /* ========================================
+     BEST SELLERS
+  ======================================== */
+
+  .best-sellers-section {
+    margin-top: 34px;
+  }
+
+  .best-sellers {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 16px;
+  }
+
+  .best-seller-image {
+    width: 100%;
+    max-width: 210px;
+    margin: 0 auto;
+  }
+
+  .best-seller-card h3 {
+    margin-top: 9px;
+    font-size: 12px;
+  }
+
+  .see-all-button {
+    font-size: 12px;
+  }
+
+  /* ========================================
+     BOTTOM NAVIGATION
+  ======================================== */
+
+  .bottom-navigation {
+    left: 50%;
+    right: auto;
+    width: min(760px, calc(100% - 48px));
+    transform: translateX(-50%);
+    height: 68px;
+    padding: 6px 30px 8px;
+    border: 1px solid #e4ded7;
+    border-bottom: none;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .bottom-navigation button {
+    gap: 4px;
+    font-size: 10px;
+  }
+}
+
+
+/* ========================================
+   LARGE LAPTOP / DESKTOP
+======================================== */
+
+@media (min-width: 1200px) {
+  .home-header {
+    height: 96px;
+  }
+
+  .home-logo-mark {
+    width: 56px;
+    height: 56px;
+  }
+
+  .home-brand h1 {
+    font-size: 35px;
+  }
+
+  .home-content {
+    max-width: 1240px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 24px;
+  }
+
+  .home-search {
+    max-width: 760px;
+    height: 50px;
+  }
+
+  .quick-actions {
+    max-width: 760px;
+  }
+
+  .nearby-card {
+    height: 300px;
+  }
+
+  .nearby-content {
+    left: 34px;
+    bottom: 30px;
+  }
+
+  .nearby-content h2 {
+    font-size: 29px;
+  }
+
+  .nearby-content p {
+    font-size: 14px;
+  }
+
+  .section-header h2,
+  .section-title h2 {
+    font-size: 24px;
+  }
+
+  .collections {
+    gap: 22px;
+  }
+
+  .collection-card > img {
+    height: 220px;
+  }
+
+  .collection-info {
+    min-height: 68px;
+    padding: 12px 14px;
+  }
+
+  .collection-info h3 {
+    font-size: 14px;
+  }
+
+  .collection-info span {
+    font-size: 11px;
+  }
+
+  .signature-card {
+    height: 300px;
+  }
+
+  .make-coffee-card {
+    height: 320px;
+  }
+
+  .make-coffee-content {
+    left: 38px;
+    top: 42px;
+  }
+
+  .make-coffee-content h3 {
+    font-size: 40px;
+  }
+
+  .make-coffee-content p {
+    max-width: 360px;
+    font-size: 14px;
+  }
+
+  .best-sellers {
+    gap: 24px;
+  }
+
+  .best-seller-card h3 {
+    font-size: 13px;
+  }
+}
