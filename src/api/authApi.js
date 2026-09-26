@@ -17,7 +17,7 @@ export const loginUser = (data) => {
 };
 
 export const googleLogin = (credential) => {
-  return api.post("/auth/google", { credential });
+  return api.post("/api/auth/google", { credential });
 };
 
 export const getCurrentUser = () => {
