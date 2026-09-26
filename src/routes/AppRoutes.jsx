@@ -18,6 +18,8 @@ const Offers = () => <div>Offers</div>;
 const Orders = () => <div>Orders</div>;
 const Rewards = () => <div>Rewards</div>;
 const Location = () => <div>Location</div>;
+const Support = () => <div>Contact Support</div>;
+const Categories = () => <div>Categories</div>;
 
 const AppRoutes = () => {
   return (
@@ -36,6 +38,8 @@ const AppRoutes = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/product/:slug" element={<ProductDetails />} />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/support" element={<Support />} />
         <Route path="/account" element={<Account />} />
         <Route path="/offers" element={<Offers />} />
         <Route path="/orders" element={<Orders />} />

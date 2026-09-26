@@ -2,8 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft, MapPin, Clock3, Navigation } from "lucide-react";
 
-import { updateUserLocation } from "../../api/locationApi";
-
 import "./EnableLocation.css";
 
 const EnableLocation = () => {
@@ -31,21 +29,8 @@ const EnableLocation = () => {
       accuracy: position.coords.accuracy,
     };
 
-    // Save locally
     localStorage.setItem("userLocation", JSON.stringify(location));
 
-    try {
-      // Backend-ready API call
-      await updateUserLocation(location);
-    } catch (error) {
-      /*
-       * Backend is not connected yet.
-       * We still allow the user to continue.
-       */
-      console.error("Unable to save location to backend:", error);
-    }
-
-    // Continue to Home
     goToNextPage();
   };
 
