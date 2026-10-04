@@ -6,6 +6,7 @@ import Register from "../pages/auth/Register";
 import VerifyEmail from "../pages/auth/VerifyEmail";
 import EnableLocation from "../pages/auth/EnableLocation";
 import Welcome from "../pages/auth/Welcome";
+import AppPreview from "../pages/preview/AppPreview";
 import Home from "../pages/home/Home";
 
 const ForgotPassword = () => <div>Forgot Password</div>;
@@ -32,6 +33,7 @@ const AppRoutes = () => {
       <Route path="/welcome" element={<Welcome />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset-password" element={<ResetPassword />} />
+      <Route path="/app-preview" element={<AppPreview />} />
 
       {/* Protected Routes */}
       <Route element={<ProtectedRoute />}>

@@ -1,1254 +1,1235 @@
-/* ========================================
+/* =========================================================
    HOME PAGE
-======================================== */
+========================================================= */
 
 .home-page {
-  width: 100%;
+  --cream: #f5f0e8;
+  --cream-light: #fffdf9;
+  --black: #121010;
+  --red: #bd001b;
+  --red-dark: #980016;
+  --text: #151515;
+  --muted: #77736f;
+  --border: #e2dcd4;
+
   min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
 
-  background: #f3eee6;
-
-  color: #111111;
+  background: var(--cream);
+  color: var(--text);
 
   display: flex;
   flex-direction: column;
 
-  box-sizing: border-box;
-
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-/* ========================================
+.home-page *,
+.home-page *::before,
+.home-page *::after {
+  box-sizing: border-box;
+}
+
+.home-page button,
+.home-page input {
+  font: inherit;
+}
+
+/* =========================================================
    HEADER
-======================================== */
+========================================================= */
 
 .home-header {
   width: 100%;
-
   height: 72px;
-
-  position: relative;
+  padding: 0 20px;
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
-  background: #f3eee6;
-
+  background: var(--cream);
   flex-shrink: 0;
-
-  box-sizing: border-box;
 }
-
-/* ========================================
-   HEADER BRAND
-======================================== */
 
 .home-brand {
   display: flex;
-
   align-items: center;
-
-  justify-content: center;
-
-  gap: 11px;
+  gap: 10px;
 }
 
 .home-logo-mark {
-  width: 48px;
-  height: 48px;
-
-  display: block;
-
-  flex-shrink: 0;
-
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
 
+.home-brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-brand-text strong {
+  font-family: "Benton Modern Display", serif;
+  font-size: 15px;
+  line-height: 1;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.home-brand-text span {
+  margin-top: 4px;
+  font-family: "Inter", sans-serif;
+  font-size: 7px;
+  line-height: 1;
+  letter-spacing: 2px;
+  color: #77716c;
+}
+
+.home-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.header-icon-button,
+.profile-button {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--cream-light);
+  color: var(--text);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.profile-button {
+  background: var(--red);
+  border-color: var(--red);
+  color: white;
+  overflow: hidden;
+}
+
+.profile-button img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-.home-brand h1 {
-  margin: 0;
-
-  font-family: "Benton Modern Display", serif;
-
-  font-size: 28px;
-
-  line-height: 1;
-
-  font-weight: 600;
-
-  letter-spacing: 0;
-
-  color: #111111;
-
-  white-space: nowrap;
+.notification-dot {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--red);
 }
 
-/* ========================================
-   MAIN CONTENT
-======================================== */
+/* =========================================================
+   CONTENT
+========================================================= */
 
 .home-content {
   width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
 
-  /*
-    IMPORTANT:
-    Remove the old max-width: 330px.
-
-    The reference uses almost the entire
-    available mobile width.
-  */
-
-  max-width: none;
-
-  margin: 0;
-
-  box-sizing: border-box;
-
-  padding: 10px 14px 82px;
+  /* extra bottom space so the Order button never touches the last card */
+  padding: 14px 20px 48px;
 
   flex: 1;
-
-  overflow-x: hidden;
 }
 
-/* ========================================
+/* =========================================================
+   GREETING
+========================================================= */
+
+.home-greeting {
+  margin-bottom: 18px;
+}
+
+.home-greeting h1 {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 25px;
+  line-height: 1.18;
+  font-weight: 650;
+  letter-spacing: -0.7px;
+}
+
+.home-greeting p {
+  margin: 5px 0 0;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 1.3;
+  color: var(--muted);
+}
+
+/* =========================================================
    SEARCH
-======================================== */
+========================================================= */
+
+.home-search-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 17px;
+}
 
 .home-search {
-  width: 100%;
-
-  height: 41px;
-
-  box-sizing: border-box;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 8px;
-
+  height: 45px;
   padding: 0 12px;
 
-  background: #fffdf9;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--cream-light);
 
-  border: 1px solid #e1dbd4;
-
-  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .home-search > svg {
   flex-shrink: 0;
-
   color: #77716c;
 }
 
 .home-search input {
-  flex: 1;
-
+  width: 100%;
   min-width: 0;
 
   border: none;
-
   outline: none;
-
   background: transparent;
-
-  font-family: "Inter", sans-serif;
-
+  color: var(--text);
   font-size: 12px;
-
-  color: #171717;
 }
 
 .home-search input::placeholder {
-  color: #89827c;
+  color: #99928b;
 }
 
-.home-search button {
-  width: 25px;
-  height: 25px;
+/* =========================================================
+   HOT / COLD
+========================================================= */
 
-  padding: 0;
+.temperature-toggle {
+  height: 45px;
+  padding: 3px;
+  border-radius: 10px;
+  background: #171514;
+
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.temperature-button {
+  height: 100%;
+  min-width: 47px;
+  padding: 0 7px;
 
   border: none;
-
-  background: transparent;
-
-  color: #b27b32;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  cursor: pointer;
-}
-
-/* ========================================
-   QUICK ACTIONS
-======================================== */
-
-.quick-actions {
-  width: 100%;
-
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 8px;
-
-  margin-top: 11px;
-}
-
-.quick-actions button {
-  width: 100%;
-
-  height: 45px;
-
-  padding: 0 8px;
-
-  border: 1px solid #e0dad3;
-
   border-radius: 8px;
-
-  background: #fffdf9;
+  background: transparent;
+  color: #fff;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
+  gap: 4px;
 
-  gap: 7px;
-
-  font-family: "Inter", sans-serif;
-
-  font-size: 10px;
-
-  color: #171717;
-
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   cursor: pointer;
 }
 
-.quick-actions button svg {
-  color: #b27b32;
-
-  flex-shrink: 0;
+.temperature-button.active {
+  background: var(--red);
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.18),
+    0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* ========================================
-   NEARBY
-======================================== */
+.cold-symbol {
+  font-size: 13px;
+  line-height: 1;
+}
+
+/* =========================================================
+   NEARBY STATION
+========================================================= */
 
 .nearby-section {
   width: 100%;
-
-  margin-top: 16px;
+  margin-bottom: 72px;
 }
 
 .nearby-card {
   width: 100%;
+  min-height: 150px;
+  padding: 14px;
 
-  height: 184px;
+  border-radius: 12px;
+  background: var(--cream-light);
+  border: 1px solid rgba(0, 0, 0, 0.03);
 
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 14px;
+}
+
+.nearby-map {
   position: relative;
-
+  min-height: 120px;
   overflow: hidden;
+  border-radius: 9px;
 
-  border-radius: 8px;
-
-  background-image: url("https://images.unsplash.com/photo-1524666041070-9f3e4f8f2b4e?w=900");
-
-  background-size: cover;
-
-  background-position: center;
+  background: linear-gradient(
+    145deg,
+    #e6e8dc 0%,
+    #d3dcc4 45%,
+    #b9d6df 46%,
+    #a7c8d3 55%,
+    #e4e5d7 56%
+  );
 }
 
-.nearby-overlay {
+.map-road {
   position: absolute;
-
-  inset: 0;
-
-  background: rgba(25, 25, 25, 0.56);
-
-  z-index: 1;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  transform: rotate(-28deg);
 }
 
-.nearby-logo {
+.map-road-one {
+  width: 150px;
+  top: 28px;
+  left: -25px;
+}
+
+.map-road-two {
+  width: 140px;
+  top: 67px;
+  left: 5px;
+  transform: rotate(17deg);
+}
+
+.map-road-three {
+  width: 125px;
+  top: 105px;
+  left: -10px;
+  transform: rotate(-12deg);
+}
+
+.map-road-four {
+  width: 95px;
+  top: 10px;
+  right: -30px;
+  transform: rotate(65deg);
+}
+
+.nearby-pin {
   position: absolute;
-
-  top: 9px;
-  left: 9px;
-
-  width: 39px;
-  height: 39px;
-
-  overflow: hidden;
-
-  border-radius: 50%;
-
-  z-index: 3;
-}
-
-.nearby-logo img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-}
-
-.nearby-map-pin {
-  position: absolute;
-
-  left: 50%;
-  top: 43%;
-
+  left: 57%;
+  top: 48%;
   transform: translate(-50%, -50%);
-
-  color: #b40020;
-
-  z-index: 3;
+  color: var(--red);
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.15));
 }
 
-.nearby-content {
-  position: absolute;
-
-  left: 17px;
-  bottom: 18px;
-
-  z-index: 3;
-
-  color: #ffffff;
+.nearby-details {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.nearby-content h2 {
-  margin: 0 0 4px;
+.nearby-eyebrow {
+  margin-top: 1px;
+  font-size: 9px;
+  color: #68635f;
+}
 
+.nearby-details h2 {
+  margin: 3px 0 4px;
   font-family: "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 1.15;
+  font-weight: 700;
 
-  font-size: 18px;
-
-  line-height: 1.2;
-
-  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
-.nearby-content p {
-  margin: 0;
-
-  font-family: "Inter", sans-serif;
-
-  font-size: 11px;
-
+.nearby-details p {
+  margin: 0 0 2px;
+  font-size: 10px;
   line-height: 1.3;
-
-  color: rgba(255, 255, 255, 0.72);
+  color: #47433f;
 }
 
-/* ========================================
+.nearby-details button {
+  width: 100%;
+  min-height: 33px;
+  margin-top: auto;
+
+  border: none;
+  border-radius: 7px;
+  background: var(--red);
+  color: white;
+
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* =========================================================
    SECTION HEADER
-======================================== */
+========================================================= */
 
 .section-header {
   width: 100%;
-
   display: flex;
-
-  align-items: center;
-
+  align-items: flex-end;
   justify-content: space-between;
+  gap: 15px;
 }
 
-.section-header h2,
-.section-title h2 {
+.section-header h2 {
   margin: 0;
-
-  font-family: "Benton Modern Display", serif;
-
-  font-size: 17px;
-
-  line-height: 1.2;
-
-  font-weight: 500;
-}
-
-.section-title {
-  width: 100%;
-}
-
-/* ========================================
-   COLLECTIONS
-======================================== */
-
-.collections-section {
-  width: 100%;
-
-  margin-top: 18px;
-}
-
-.collection-arrows {
-  display: flex;
-
-  gap: 7px;
-}
-
-.collection-arrows button {
-  width: 29px;
-  height: 29px;
-
-  padding: 0;
-
-  border: 1px solid #e0dad3;
-
-  border-radius: 50%;
-
-  background: #fffdf9;
-
-  color: #171717;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  cursor: pointer;
-}
-
-.collections {
-  width: 100%;
-
-  display: flex;
-
-  gap: 14px;
-
-  margin-top: 11px;
-
-  overflow-x: auto;
-
-  scrollbar-width: none;
-}
-
-.collections::-webkit-scrollbar {
-  display: none;
-}
-
-.collection-card {
-  width: 91px;
-
-  min-width: 91px;
-
-  overflow: hidden;
-
-  border-radius: 7px;
-
-  background: #eee8df;
-}
-
-.collection-card > img {
-  width: 91px;
-  height: 92px;
-
-  display: block;
-
-  object-fit: cover;
-}
-
-.collection-info {
-  min-height: 42px;
-
-  padding: 6px 7px;
-
-  box-sizing: border-box;
-}
-
-.collection-info h3 {
-  margin: 0;
-
   font-family: "Inter", sans-serif;
-
-  font-size: 10px;
-
+  font-size: 19px;
   line-height: 1.15;
-
-  font-weight: 600;
-
-  white-space: nowrap;
-
-  overflow: hidden;
-
-  text-overflow: ellipsis;
+  font-weight: 700;
+  letter-spacing: -0.3px;
 }
 
-.collection-info span {
-  display: block;
-
-  margin-top: 3px;
-
-  font-family: "Inter", sans-serif;
-
-  font-size: 8px;
-
-  line-height: 1;
-
+.section-header p {
+  margin: 4px 0 0;
+  font-size: 11px;
   color: #77716c;
 }
 
-/* ========================================
-   LUDOVICO SIGNATURE
-======================================== */
-
-.signature-section {
-  width: 100%;
-
-  margin-top: 18px;
-}
-
-.signature-card {
-  width: 100%;
-
-  height: 150px;
-
-  position: relative;
-
-  overflow: hidden;
-
-  border-radius: 9px;
-
-  margin-top: 10px;
-}
-
-.signature-card > img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-
-  object-position: center;
-}
-
-.signature-overlay {
-  position: absolute;
-
-  inset: 0;
-
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.43),
-    rgba(0, 0, 0, 0.05)
-  );
-}
-
-.signature-logo {
-  position: absolute;
-
-  top: 11px;
-  left: 10px;
-
-  width: 43px;
-  height: 43px;
-
-  overflow: hidden;
-
-  border-radius: 50%;
-
-  z-index: 2;
-}
-
-.signature-logo img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-}
-
-/* ========================================
-   MAKE YOUR OWN COFFEE
-======================================== */
-
-.make-coffee-section {
-  width: 100%;
-
-  margin-top: 19px;
-}
-
-.make-coffee-section .section-title {
-  margin-bottom: 10px;
-}
-
-.make-coffee-card {
-  width: 100%;
-
-  height: 175px;
-
-  position: relative;
-
-  overflow: hidden;
-
-  border-radius: 9px;
-}
-
-.make-coffee-card > img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-
-  object-position: center;
-}
-
-.make-coffee-overlay {
-  position: absolute;
-
-  inset: 0;
-
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.68),
-    rgba(0, 0, 0, 0.12)
-  );
-}
-
-.make-coffee-content {
-  position: absolute;
-
-  left: 17px;
-  top: 20px;
-
-  color: #ffffff;
-
-  z-index: 2;
-}
-
-.make-coffee-content > span {
-  font-family: "Inter", sans-serif;
-
-  font-size: 8px;
-
-  letter-spacing: 2px;
-
-  font-weight: 600;
-}
-
-.make-coffee-content h3 {
-  margin: 7px 0 5px;
-
-  font-family: "Benton Modern Display", serif;
-
-  font-size: 24px;
-
-  line-height: 1.05;
-
-  font-weight: 500;
-}
-
-.make-coffee-content p {
-  max-width: 210px;
-
-  margin: 0 0 13px;
-
-  font-family: "Inter", sans-serif;
-
-  font-size: 10px;
-
-  line-height: 1.4;
-}
-
-.make-coffee-content button {
-  height: 31px;
-
-  padding: 0 13px;
-
+.section-header > button {
+  padding: 0;
   border: none;
-
-  border-radius: 6px;
-
-  background: #c00020;
-
-  color: #ffffff;
-
-  font-family: "Inter", sans-serif;
-
-  font-size: 10px;
-
+  background: transparent;
+  color: var(--red);
+  font-size: 11px;
   font-weight: 600;
-
   cursor: pointer;
 }
 
-/* ========================================
-   BEST SELLERS
-======================================== */
+/* =========================================================
+   EXPLORE MENU
+========================================================= */
 
-.best-sellers-section {
+.explore-section {
   width: 100%;
-
-  margin-top: 19px;
+  margin-bottom: 52px;
 }
 
-.best-sellers {
-  width: 100%;
+.menu-categories {
+  width: calc(100% + 20px);
+  margin-top: 17px;
+  padding-right: 20px;
 
-  display: grid;
+  display: flex;
+  gap: 15px;
 
-  grid-template-columns: repeat(4, 1fr);
-
-  gap: 9px;
-
-  margin-top: 11px;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
 
-.best-seller-card {
-  min-width: 0;
-
-  text-align: center;
+.menu-categories::-webkit-scrollbar {
+  display: none;
 }
 
-.best-seller-image {
-  width: 100%;
-
-  aspect-ratio: 1;
-
-  overflow: hidden;
-
-  border-radius: 50%;
-
-  background: #eee8df;
-}
-
-.best-seller-image img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-}
-
-.best-seller-card h3 {
-  margin: 6px 0 0;
-
-  font-family: "Inter", sans-serif;
-
-  font-size: 9px;
-
-  line-height: 1.2;
-
-  font-weight: 500;
-}
-
-.see-all-button {
+.menu-category {
+  flex: 0 0 82px;
   padding: 0;
 
   border: none;
-
-  background: transparent;
-
-  color: #c00020;
-
-  font-family: "Inter", sans-serif;
-
-  font-size: 10px;
-
-  cursor: pointer;
-}
-
-/* ========================================
-   BOTTOM NAVIGATION
-======================================== */
-
-.bottom-navigation {
-  position: fixed;
-
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  height: 64px;
-
-  padding: 5px 22px 7px;
-
-  box-sizing: border-box;
-
-  display: grid;
-
-  grid-template-columns: repeat(4, 1fr);
-
-  background: #fffdf9;
-
-  border-top: 1px solid #e4ded7;
-
-  z-index: 100;
-}
-
-.bottom-navigation button {
-  border: none;
-
   background: transparent;
 
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
-
-  justify-content: center;
-
-  gap: 3px;
-
-  color: #7d756e;
-
-  font-family: "Inter", sans-serif;
-
-  font-size: 8px;
-
+  gap: 8px;
   cursor: pointer;
 }
 
-.bottom-navigation button.active {
-  color: #c00020;
+.menu-category-image {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #ddd;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
 }
 
-.bottom-navigation button svg {
-  stroke-width: 1.7;
+.menu-category-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
-/* ========================================
-   VERY SMALL SCREENS
-======================================== */
+.menu-category span {
+  max-width: 82px;
 
-@media (max-width: 360px) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: var(--text);
+  font-size: 10px;
+  font-weight: 500;
+}
+
+/* =========================================================
+   FEATURED CAROUSEL
+========================================================= */
+
+.featured-section {
+  margin-left: -20px;
+  width: calc(100% + 40px);
+  margin-bottom: 65px;
+}
+
+.featured-carousel {
+  width: 100%;
+
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+
+  overflow-x: auto;
+  padding: 28px 11%;
+
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+
+  perspective: 900px;
+  perspective-origin: 50% 50%;
+}
+
+.featured-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.featured-card {
+  flex: 0 0 78%;
+  scroll-snap-align: center;
+
+  /* black frame around the image */
+  padding: 20px;
+  border-radius: 28px;
+
+  background: var(--black);
+  color: white;
+
+  transform-origin: center center;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.featured-image {
+  width: 100%;
+  aspect-ratio: 1 / 0.95;
+
+  border-radius: 9px;
+  overflow: hidden;
+
+  background: #282421;
+}
+
+.featured-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.featured-content {
+  padding: 18px 0 0;
+}
+
+.featured-label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.featured-content h3 {
+  margin: 0;
+  font-family: "Benton Modern Display", serif;
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.featured-content p {
+  min-height: 33px;
+  margin: 10px 0 14px;
+  font-size: 10px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.featured-content button {
+  width: 100%;
+  height: 37px;
+
+  border: none;
+  border-radius: 8px;
+  background: var(--red);
+  color: white;
+
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 13px;
+  margin-top: 18px;
+}
+
+.carousel-controls button {
+  width: 57px;
+  height: 57px;
+  padding: 0;
+
+  border: 1px solid var(--red);
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--red);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.carousel-controls button:active {
+  transform: scale(0.94);
+  background: var(--red);
+  color: white;
+}
+
+/* =========================================================
+   MADE FOR YOU
+========================================================= */
+
+.made-for-you-section {
+  width: 100%;
+  margin-bottom: 34px;
+}
+
+.made-for-you-grid {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+
+  margin-top: 20px;
+}
+
+.made-product-card {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 9px;
+  background: var(--cream-light);
+}
+
+.made-product-card > img {
+  width: 100%;
+  aspect-ratio: 1 / 0.82;
+  display: block;
+  object-fit: cover;
+}
+
+.made-product-info {
+  position: relative;
+  min-height: 81px;
+  padding: 9px 9px 8px;
+}
+
+.made-product-info h3 {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 650;
+}
+
+.made-product-info span {
+  display: block;
+  margin-top: 4px;
+  font-size: 9px;
+  color: #77716c;
+}
+
+.made-product-info strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.made-product-info button {
+  position: absolute;
+  right: 9px;
+  bottom: 8px;
+
+  width: 24px;
+  height: 24px;
+  padding: 0;
+
+  border: none;
+  border-radius: 7px;
+  background: var(--red);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.product-loading {
+  margin-top: 20px;
+  padding: 30px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* =========================================================
+   BUILD YOUR OWN CUP
+========================================================= */
+
+.build-cup-card {
+  width: 100%;
+  min-height: 112px;
+  padding: 17px;
+  margin-bottom: 32px;
+
+  border-radius: 11px;
+  background: var(--black);
+  color: white;
+
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr) 40px;
+  align-items: center;
+  gap: 13px;
+}
+
+.build-cup-icon {
+  width: 54px;
+  height: 54px;
+
+  border: 1px solid var(--red);
+  border-radius: 50%;
+  color: var(--red);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.build-cup-content h2 {
+  margin: 0;
+  font-family: "Benton Modern Display", serif;
+  font-size: 19px;
+  line-height: 1.05;
+  font-weight: 500;
+}
+
+.build-cup-content p {
+  max-width: 170px;
+  margin: 6px 0 0;
+  font-size: 10px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.build-cup-card > button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+
+  border: none;
+  border-radius: 10px;
+  background: var(--cream-light);
+  color: var(--text);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* =========================================================
+   REWARDS
+========================================================= */
+
+.rewards-card {
+  width: 100%;
+  padding: 17px;
+  margin-bottom: 25px;
+
+  border: 1px solid #ddd6cf;
+  border-radius: 11px;
+  background: #fffafa;
+}
+
+.rewards-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.rewards-label {
+  display: block;
+  color: var(--red);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.rewards-top h2 {
+  margin: 6px 0 4px;
+  font-size: 25px;
+  line-height: 1;
+  letter-spacing: -0.7px;
+}
+
+.rewards-top p {
+  margin: 0;
+  font-size: 10px;
+  color: #77716c;
+}
+
+.rewards-star {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--red);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rewards-progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 17px;
+  font-size: 9px;
+  color: #77716c;
+}
+
+.rewards-progress-info strong {
+  color: var(--red);
+}
+
+.rewards-progress {
+  width: 100%;
+  height: 4px;
+  margin-top: 7px;
+  border-radius: 999px;
+  background: #dedede;
+  overflow: hidden;
+}
+
+.rewards-progress span {
+  display: block;
+  width: 80%;
+  height: 100%;
+  background: var(--red);
+  border-radius: inherit;
+}
+
+.rewards-card > button {
+  height: 34px;
+  margin-top: 13px;
+  padding: 0 13px;
+
+  border: 1px solid var(--red);
+  border-radius: 7px;
+  background: transparent;
+  color: var(--red);
+
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* =========================================================
+   BOTTOM NAVIGATION
+   ---------------------------------------------------------
+   NOT fixed: it is the last item of the page (flex column),
+   so it is only visible once you scroll to the very bottom.
+
+   Structure:
+   - .bottom-nav-bg     dark bar drawn in 3 parts (left, SVG
+                        notch, right) + a fill below the notch
+   - 4 buttons + a spacer for the middle column
+   - .order-navigation-button  floats in the notch
+========================================================= */
+
+.bottom-navigation {
+  --nav-notch-height: 58px;
+
+  position: relative;
+  isolation: isolate;
+
+  width: 100%;
+  min-height: 86px;
+  margin-top: 0;
+  padding: 0 14px max(10px, env(safe-area-inset-bottom));
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: end;
+
+  flex-shrink: 0;
+}
+
+/* ---------- dark bar with curved notch ---------- */
+
+.bottom-nav-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  display: flex;
+  align-items: flex-start;
+
+  filter: drop-shadow(0 -6px 14px rgba(0, 0, 0, 0.1));
+}
+
+.bottom-nav-side {
+  flex: 1;
+  height: var(--nav-notch-height);
+  background: var(--black);
+}
+
+.bottom-nav-notch {
+  flex: 0 0 150px;
+  width: 150px;
+  height: var(--nav-notch-height);
+  display: block;
+  fill: var(--black);
+
+  /* overlap the side bars by 1px to hide the seam */
+  margin: 0 -1px;
+  position: relative;
+  z-index: 1;
+}
+
+.bottom-nav-notch path {
+  shape-rendering: geometricPrecision;
+}
+
+/* fills everything below the notch row (incl. safe-area space) */
+.bottom-nav-fill {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--nav-notch-height) - 1px);
+  bottom: 0;
+
+  background: var(--black);
+}
+
+.bottom-nav-spacer {
+  display: block;
+}
+
+/* ---------- items ---------- */
+
+.bottom-navigation > button:not(.order-navigation-button) {
+  position: relative;
+  height: 56px;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bottom-navigation > button:not(.order-navigation-button) svg {
+  flex-shrink: 0;
+}
+
+/* ---------- centre Order button ---------- */
+
+.bottom-navigation > .order-navigation-button {
+  position: absolute;
+  left: 50%;
+  top: -28px;
+  transform: translateX(-50%);
+
+  width: 72px;
+  height: 72px;
+  padding: 0;
+
+  border: 2px solid rgba(255, 232, 232, 0.9);
+  border-radius: 50%;
+
+  background: radial-gradient(circle at 50% 30%, #c4001d 0%, #a00016 100%);
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+
+  cursor: pointer;
+  z-index: 2;
+  -webkit-tap-highlight-color: transparent;
+
+  box-shadow:
+    0 0 0 6px rgba(189, 0, 27, 0.2),
+    0 8px 20px rgba(189, 0, 27, 0.45),
+    0 0 36px rgba(189, 0, 27, 0.35);
+
+  transition: transform 0.15s ease;
+}
+
+.bottom-navigation > .order-navigation-button:active {
+  transform: translateX(-50%) scale(0.96);
+}
+
+.bottom-navigation > .order-navigation-button svg {
+  display: block;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 600px) {
   .home-content {
-    padding-left: 10px;
-    padding-right: 10px;
+    max-width: 620px;
+    padding-left: 28px;
+    padding-right: 28px;
   }
-
-  .home-brand h1 {
-    font-size: 25px;
-  }
-
-  .home-logo-mark {
-    width: 44px;
-    height: 44px;
-  }
-}
-/* ========================================
-   TABLET / LAPTOP RESPONSIVE LAYOUT
-   Mobile styles above remain unchanged.
-======================================== */
-
-@media (min-width: 768px) {
-  /* ========================================
-     PAGE
-  ======================================== */
-
-  .home-page {
-    min-height: 100vh;
-  }
-
-  /* ========================================
-     HEADER
-  ======================================== */
 
   .home-header {
-    height: 88px;
+    padding-left: 28px;
+    padding-right: 28px;
   }
 
-  .home-brand {
-    gap: 13px;
+  .nearby-card {
+    grid-template-columns: 160px minmax(0, 1fr);
+    min-height: 175px;
+  }
+
+  .nearby-map {
+    min-height: 145px;
+  }
+
+  .featured-card {
+    flex-basis: 62%;
+  }
+
+  .featured-carousel {
+    padding-left: 19%;
+    padding-right: 19%;
+  }
+
+  .made-for-you-grid {
+    gap: 14px;
+  }
+}
+
+/* =========================================================
+   LAPTOP / DESKTOP
+========================================================= */
+
+@media (min-width: 900px) {
+  .home-header {
+    height: 82px;
+    padding: 0 45px;
   }
 
   .home-logo-mark {
-    width: 52px;
-    height: 52px;
+    width: 46px;
+    height: 46px;
   }
 
-  .home-brand h1 {
+  .home-brand-text strong {
+    font-size: 18px;
+  }
+
+  .home-brand-text span {
+    font-size: 8px;
+  }
+
+  .home-content {
+    max-width: 1120px;
+    padding: 30px 45px 64px;
+  }
+
+  .home-greeting h1 {
     font-size: 32px;
   }
 
-  /* ========================================
-     MAIN CONTENT
-  ======================================== */
-
-  .home-content {
-    width: 100%;
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 20px 32px 110px;
-    box-sizing: border-box;
+  .home-greeting p {
+    font-size: 15px;
   }
 
-  /* ========================================
-     SEARCH
-  ======================================== */
-
-  .home-search {
-    max-width: 720px;
-    height: 48px;
-    margin: 0 auto;
-    padding: 0 16px;
-    border-radius: 10px;
-  }
-
-  .home-search input {
-    font-size: 13px;
-  }
-
-  .home-search button {
-    width: 30px;
-    height: 30px;
-  }
-
-  /* ========================================
-     QUICK ACTIONS
-  ======================================== */
-
-  .quick-actions {
-    max-width: 720px;
-    margin: 16px auto 0;
-    gap: 12px;
-  }
-
-  .quick-actions button {
-    height: 52px;
-    border-radius: 10px;
-    gap: 9px;
-    font-size: 12px;
-  }
-
-  /* ========================================
-     NEARBY
-  ======================================== */
-
-  .nearby-section {
-    margin-top: 28px;
+  .home-search-row {
+    max-width: 700px;
   }
 
   .nearby-card {
-    height: 260px;
-    border-radius: 12px;
-  }
-
-  .nearby-logo {
-    top: 16px;
-    left: 16px;
-    width: 48px;
-    height: 48px;
-  }
-
-  .nearby-map-pin {
-    top: 45%;
-  }
-
-  .nearby-content {
-    left: 28px;
-    bottom: 26px;
-  }
-
-  .nearby-content h2 {
-    margin-bottom: 6px;
-    font-size: 25px;
-  }
-
-  .nearby-content p {
-    font-size: 13px;
-  }
-
-  /* ========================================
-     SECTION HEADERS
-  ======================================== */
-
-  .section-header h2,
-  .section-title h2 {
-    font-size: 22px;
-  }
-
-  /* ========================================
-     COLLECTIONS
-  ======================================== */
-
-  .collections-section {
-    margin-top: 32px;
-  }
-
-  .collection-arrows {
-    gap: 8px;
-  }
-
-  .collection-arrows button {
-    width: 34px;
-    height: 34px;
-  }
-
-  .collections {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 18px;
-    margin-top: 16px;
-    overflow-x: visible;
-  }
-
-  .collection-card {
-    width: 100%;
-    min-width: 0;
-    border-radius: 10px;
-  }
-
-  .collection-card > img {
-    width: 100%;
-    height: 190px;
-  }
-
-  .collection-info {
-    min-height: 60px;
-    padding: 10px 12px;
-  }
-
-  .collection-info h3 {
-    font-size: 13px;
-  }
-
-  .collection-info span {
-    margin-top: 5px;
-    font-size: 10px;
-  }
-
-  /* ========================================
-     LUDOVICO SIGNATURE
-  ======================================== */
-
-  .signature-section {
-    margin-top: 34px;
-  }
-
-  .signature-card {
-    height: 260px;
-    margin-top: 14px;
-    border-radius: 12px;
-  }
-
-  .signature-logo {
-    top: 16px;
-    left: 16px;
-    width: 52px;
-    height: 52px;
-  }
-
-  /* ========================================
-     MAKE YOUR OWN COFFEE
-  ======================================== */
-
-  .make-coffee-section {
-    margin-top: 34px;
-  }
-
-  .make-coffee-section .section-title {
-    margin-bottom: 14px;
-  }
-
-  .make-coffee-card {
-    height: 280px;
-    border-radius: 12px;
-  }
-
-  .make-coffee-content {
-    left: 30px;
-    top: 34px;
-  }
-
-  .make-coffee-content > span {
-    font-size: 10px;
-    letter-spacing: 2.5px;
-  }
-
-  .make-coffee-content h3 {
-    margin: 10px 0 8px;
-    font-size: 34px;
-  }
-
-  .make-coffee-content p {
-    max-width: 320px;
-    margin-bottom: 18px;
-    font-size: 13px;
-  }
-
-  .make-coffee-content button {
-    height: 38px;
-    padding: 0 18px;
-    border-radius: 7px;
-    font-size: 12px;
-  }
-
-  /* ========================================
-     BEST SELLERS
-  ======================================== */
-
-  .best-sellers-section {
-    margin-top: 34px;
-  }
-
-  .best-sellers {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
-    margin-top: 16px;
-  }
-
-  .best-seller-image {
-    width: 100%;
-    max-width: 210px;
+    max-width: 700px;
+    min-height: 190px;
     margin: 0 auto;
   }
 
-  .best-seller-card h3 {
-    margin-top: 9px;
-    font-size: 12px;
+  .explore-section {
+    margin-top: 15px;
   }
 
-  .see-all-button {
-    font-size: 12px;
-  }
-
-  /* ========================================
-     BOTTOM NAVIGATION
-  ======================================== */
-
-  .bottom-navigation {
-    left: 50%;
-    right: auto;
-    width: min(760px, calc(100% - 48px));
-    transform: translateX(-50%);
-    height: 68px;
-    padding: 6px 30px 8px;
-    border: 1px solid #e4ded7;
-    border-bottom: none;
-    border-radius: 18px 18px 0 0;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
-  }
-
-  .bottom-navigation button {
-    gap: 4px;
-    font-size: 10px;
-  }
-}
-
-
-/* ========================================
-   LARGE LAPTOP / DESKTOP
-======================================== */
-
-@media (min-width: 1200px) {
-  .home-header {
-    height: 96px;
-  }
-
-  .home-logo-mark {
-    width: 56px;
-    height: 56px;
-  }
-
-  .home-brand h1 {
-    font-size: 35px;
-  }
-
-  .home-content {
-    max-width: 1240px;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 24px;
-  }
-
-  .home-search {
-    max-width: 760px;
-    height: 50px;
-  }
-
-  .quick-actions {
-    max-width: 760px;
-  }
-
-  .nearby-card {
-    height: 300px;
-  }
-
-  .nearby-content {
-    left: 34px;
-    bottom: 30px;
-  }
-
-  .nearby-content h2 {
-    font-size: 29px;
-  }
-
-  .nearby-content p {
-    font-size: 14px;
-  }
-
-  .section-header h2,
-  .section-title h2 {
-    font-size: 24px;
-  }
-
-  .collections {
+  .menu-categories {
     gap: 22px;
   }
 
-  .collection-card > img {
-    height: 220px;
+  .menu-category {
+    flex-basis: 95px;
   }
 
-  .collection-info {
-    min-height: 68px;
-    padding: 12px 14px;
+  .menu-category-image {
+    width: 95px;
+    height: 95px;
   }
 
-  .collection-info h3 {
-    font-size: 14px;
+  .menu-category span {
+    max-width: 95px;
   }
 
-  .collection-info span {
-    font-size: 11px;
+  .featured-section {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
   }
 
-  .signature-card {
-    height: 300px;
+  .featured-card {
+    flex-basis: 390px;
+    padding: 24px;
+    border-radius: 32px;
   }
 
-  .make-coffee-card {
-    height: 320px;
+  .featured-carousel {
+    padding-left: calc((100% - 390px) / 2);
+    padding-right: calc((100% - 390px) / 2);
   }
 
-  .make-coffee-content {
-    left: 38px;
-    top: 42px;
+  .featured-image {
+    aspect-ratio: 1 / 0.9;
   }
 
-  .make-coffee-content h3 {
-    font-size: 40px;
+  .featured-content {
+    padding: 20px 0 0;
   }
 
-  .make-coffee-content p {
-    max-width: 360px;
-    font-size: 14px;
+  .featured-content h3 {
+    font-size: 27px;
   }
 
-  .best-sellers {
-    gap: 24px;
+  .featured-content p {
+    font-size: 12px;
   }
 
-  .best-seller-card h3 {
-    font-size: 13px;
+  .made-for-you-grid {
+    max-width: 700px;
+  }
+
+  .build-cup-card {
+    max-width: 700px;
+  }
+
+  .rewards-card {
+    max-width: 700px;
+  }
+
+  /* keep the bar's content centred on wide screens; the dark bar stays full width */
+  .bottom-navigation {
+    padding-left: calc(50% - 350px);
+    padding-right: calc(50% - 350px);
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .featured-card,
+  .carousel-controls button,
+  .bottom-navigation > .order-navigation-button {
+    transition: none;
+  }
+
+  .featured-carousel {
+    scroll-behavior: auto;
   }
 }
