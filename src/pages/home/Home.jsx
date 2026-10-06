@@ -514,7 +514,11 @@ const Home = () => {
             aria-label="Profile"
           >
             {user?.avatar ? (
-              <img src={user.avatar} alt="" />
+              <img
+                src={user.avatar}
+                alt={user.name || "Profile"}
+                referrerPolicy="no-referrer"
+              />
             ) : (
               <UserRound size={19} strokeWidth={1.8} />
             )}

@@ -1,0 +1,46 @@
+.account-page {
+  min-height: 100vh;
+  background: #f3eee6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.account-card {
+  width: 100%;
+  max-width: 360px;
+  background: white;
+  border-radius: 18px;
+  padding: 30px 24px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.account-card h1 {
+  margin: 0 0 20px;
+  font-size: 28px;
+}
+
+.account-card p {
+  margin: 6px 0;
+  color: #555;
+}
+
+.account-logout-button {
+  width: 100%;
+  margin-top: 28px;
+  padding: 13px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #c9001e;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.account-logout-button:hover {
+  background: #a90019;
+}

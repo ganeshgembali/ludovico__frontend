@@ -28,6 +28,10 @@ export const AuthProvider = ({ children }) => {
 
       try {
         const response = await getCurrentUser();
+
+        console.log("AUTH ME RESPONSE:", response.data);
+        console.log("AUTH ME USER:", response.data.data.user);
+
         setUser(response.data.data.user);
       } catch (error) {
         console.log(error);
