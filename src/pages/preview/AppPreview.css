@@ -1,0 +1,1385 @@
+/* ========================================
+   LUDOVICO APP PREVIEW
+======================================== */
+
+.app-preview-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #100d0e;
+  color: #f8f4ed;
+
+  font-family: "Inter", sans-serif;
+
+  overflow-x: hidden;
+}
+
+.app-preview-page *,
+.app-preview-page *::before,
+.app-preview-page *::after {
+  box-sizing: border-box;
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+.preview-hero {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 24px 24px 60px;
+
+  background:
+    radial-gradient(circle at 50% 78%, rgba(145, 0, 20, 0.48), transparent 38%),
+    #100d0e;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.preview-header {
+  width: 100%;
+  max-width: 1180px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.preview-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.preview-brand-logo {
+  width: 43px;
+  height: 43px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+.preview-brand-text h1 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: 1px;
+}
+
+.preview-brand-text span {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 7px;
+
+  letter-spacing: 3px;
+}
+
+.preview-menu-button {
+  width: 38px;
+  height: 38px;
+
+  padding: 8px;
+
+  border: 0;
+
+  background: transparent;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 5px;
+
+  cursor: pointer;
+}
+
+.preview-menu-button span {
+  width: 100%;
+  height: 1px;
+
+  background: #f8f4ed;
+}
+
+/* ========================================
+   HERO CONTENT
+======================================== */
+
+.preview-hero-content {
+  width: 100%;
+  max-width: 1180px;
+
+  margin-top: 70px;
+}
+
+.preview-eyebrow {
+  display: block;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  color: rgba(248, 244, 237, 0.68);
+}
+
+.preview-hero h2,
+.preview-section-heading h2 {
+  margin: 12px 0 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(52px, 7vw, 92px);
+  font-weight: 400;
+
+  line-height: 0.92;
+
+  letter-spacing: -2px;
+}
+
+.preview-hero-content p {
+  max-width: 430px;
+
+  margin: 28px 0 0;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+
+  color: rgba(248, 244, 237, 0.72);
+}
+
+/* ========================================
+   PHONE PREVIEW
+======================================== */
+
+.phone-preview {
+  position: relative;
+
+  width: min(320px, 76vw);
+
+  margin-top: 52px;
+
+  padding: 10px;
+
+  border-radius: 40px;
+
+  background: #151515;
+
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.5),
+    0 0 80px rgba(180, 0, 25, 0.22);
+}
+
+.phone-screen {
+  position: relative;
+
+  height: 720px;
+
+  overflow: hidden;
+
+  border-radius: 31px;
+
+  background: #f5f0e8;
+
+  color: #171515;
+}
+
+/* ========================================
+   PHONE STATUS BAR
+======================================== */
+
+.phone-status-bar {
+  height: 30px;
+
+  padding: 8px 14px 0;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.phone-status-icons {
+  display: flex;
+
+  gap: 5px;
+
+  font-size: 6px;
+}
+
+/* ========================================
+   PHONE APP HEADER
+======================================== */
+
+.phone-app-header {
+  padding: 16px 18px 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.phone-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+}
+
+.phone-brand img {
+  width: 31px;
+  height: 31px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+.phone-brand strong {
+  display: block;
+
+  font-family: Georgia, serif;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+}
+
+.phone-brand small {
+  display: block;
+
+  margin-top: 2px;
+
+  font-size: 4px;
+
+  letter-spacing: 2px;
+}
+
+.phone-actions {
+  display: flex;
+
+  gap: 6px;
+}
+
+.phone-actions button {
+  width: 25px;
+  height: 25px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 7px;
+
+  background: #bd001f;
+
+  color: white;
+
+  font-size: 8px;
+}
+
+/* ========================================
+   PHONE CONTENT
+======================================== */
+
+.phone-content {
+  height: calc(100% - 30px);
+
+  padding: 15px 18px 40px;
+
+  overflow: hidden;
+}
+
+.phone-content h3 {
+  margin: 5px 0 3px;
+
+  font-size: 18px;
+
+  line-height: 1.15;
+}
+
+.phone-greeting {
+  margin: 0 0 13px;
+
+  color: #88827a;
+
+  font-size: 9px;
+}
+
+/* ========================================
+   SEARCH
+======================================== */
+
+.phone-search-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+.phone-search {
+  min-width: 0;
+  flex: 1;
+
+  height: 34px;
+
+  padding: 0 9px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  background: white;
+
+  border: 1px solid #e2ddd6;
+
+  border-radius: 7px;
+
+  color: #9a958e;
+
+  font-size: 8px;
+}
+
+.phone-hot-cold {
+  flex-shrink: 0;
+
+  display: flex;
+
+  background: #171313;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+}
+
+.phone-hot-cold button {
+  border: 0;
+
+  padding: 9px 8px;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 5px;
+
+  cursor: pointer;
+}
+
+.phone-hot-cold button.active {
+  background: #bd001f;
+}
+
+/* ========================================
+   NEARBY STATION
+======================================== */
+
+.phone-station {
+  margin-top: 14px;
+
+  padding: 8px;
+
+  display: flex;
+
+  gap: 8px;
+
+  background: white;
+
+  border-radius: 8px;
+}
+
+.phone-map {
+  position: relative;
+
+  width: 88px;
+  height: 88px;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  border-radius: 7px;
+
+  background:
+    linear-gradient(
+      130deg,
+      transparent 43%,
+      #88b77e 44%,
+      #88b77e 48%,
+      transparent 49%
+    ),
+    linear-gradient(
+      35deg,
+      transparent 48%,
+      #9db6c9 49%,
+      #9db6c9 54%,
+      transparent 55%
+    ),
+    #dfe5df;
+}
+
+.map-line {
+  position: absolute;
+
+  height: 2px;
+
+  background: rgba(100, 100, 100, 0.3);
+}
+
+.map-line-one {
+  width: 100px;
+
+  top: 25px;
+  left: -10px;
+
+  transform: rotate(20deg);
+}
+
+.map-line-two {
+  width: 100px;
+
+  top: 60px;
+  left: 0;
+
+  transform: rotate(-25deg);
+}
+
+.map-line-three {
+  width: 100px;
+
+  top: 45px;
+  left: -15px;
+
+  transform: rotate(70deg);
+}
+
+.map-pin {
+  position: absolute;
+
+  top: 39px;
+  left: 40px;
+
+  color: #ef1935;
+
+  font-size: 17px;
+}
+
+.station-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.station-info small {
+  font-size: 6px;
+
+  color: #777;
+}
+
+.station-info strong {
+  margin-top: 2px;
+
+  font-size: 9px;
+
+  line-height: 1.2;
+}
+
+.station-info span {
+  margin-top: 2px;
+
+  font-size: 6px;
+
+  color: #555;
+}
+
+.station-info button {
+  margin-top: auto;
+
+  height: 24px;
+
+  border: 0;
+
+  border-radius: 5px;
+
+  background: #bd001f;
+
+  color: white;
+
+  font-size: 6px;
+
+  cursor: pointer;
+}
+
+/* ========================================
+   EXPLORE MENU
+======================================== */
+
+.phone-menu-title {
+  margin-top: 22px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+}
+
+.phone-menu-title > div {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.phone-menu-title strong {
+  font-size: 14px;
+}
+
+.phone-menu-title small {
+  margin-top: 3px;
+
+  font-size: 7px;
+
+  color: #99938b;
+}
+
+.phone-menu-title > span {
+  margin-top: 3px;
+
+  color: #bd001f;
+
+  font-size: 7px;
+
+  font-weight: 700;
+}
+
+/* ========================================
+   CATEGORY CIRCLES
+======================================== */
+
+.phone-categories {
+  display: flex;
+
+  gap: 9px;
+
+  margin-top: 11px;
+
+  overflow: hidden;
+}
+
+.phone-category {
+  width: 52px;
+
+  flex-shrink: 0;
+
+  text-align: center;
+}
+
+.phone-category img {
+  width: 52px;
+  height: 52px;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+.phone-category span {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 6px;
+}
+
+/* ========================================
+   SEASONAL CAROUSEL
+======================================== */
+
+.phone-carousel {
+  position: relative;
+
+  width: calc(100% + 36px);
+
+  margin-left: -18px;
+
+  margin-top: 45px;
+
+  overflow: hidden;
+}
+
+.phone-carousel-track {
+  display: flex;
+
+  gap: 14px;
+
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.phone-season-card {
+  width: 82%;
+
+  flex-shrink: 0;
+
+  margin-left: 7%;
+
+  padding: 10px;
+
+  border-radius: 18px;
+
+  background: #171414;
+
+  color: white;
+
+  opacity: 0.88;
+
+  transform: scale(0.94);
+
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.phone-season-card.active {
+  opacity: 1;
+
+  transform: scale(1);
+}
+
+.phone-season-card img {
+  width: 100%;
+  height: 165px;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 8px;
+}
+
+.season-card-content {
+  padding: 12px 2px 4px;
+}
+
+.season-card-content > span {
+  font-size: 6px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.3px;
+}
+
+.season-card-content h4 {
+  margin: 5px 0;
+
+  font-family: Georgia, serif;
+
+  font-size: 19px;
+
+  font-weight: 400;
+}
+
+.season-card-content p {
+  min-height: 30px;
+
+  margin: 0;
+
+  color: #aaa3a0;
+
+  font-size: 7px;
+
+  line-height: 1.5;
+}
+
+.season-card-content button {
+  width: 100%;
+  height: 30px;
+
+  margin-top: 10px;
+
+  border: 0;
+
+  border-radius: 6px;
+
+  background: #c80024;
+
+  color: white;
+
+  font-size: 7px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+/* ========================================
+   CAROUSEL CONTROLS
+======================================== */
+
+.phone-carousel-controls {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 18px;
+}
+
+.phone-carousel-controls button {
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
+  border: 1px solid #d00025;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #c00020;
+
+  font-size: 25px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.phone-carousel-controls button:hover {
+  background: #c00020;
+
+  color: white;
+}
+
+/* ========================================
+   MADE FOR YOU
+======================================== */
+
+.phone-made-title {
+  margin-top: 48px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+}
+
+.phone-made-title > div {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.phone-made-title strong {
+  font-size: 15px;
+}
+
+.phone-made-title small {
+  margin-top: 3px;
+
+  color: #99938b;
+
+  font-size: 7px;
+}
+
+.phone-made-title > span {
+  margin-top: 3px;
+
+  color: #bd001f;
+
+  font-size: 7px;
+
+  font-weight: 700;
+}
+
+.phone-made-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 8px;
+
+  margin-top: 12px;
+}
+
+.phone-made-grid img {
+  width: 100%;
+  height: 105px;
+
+  object-fit: cover;
+
+  border-radius: 8px;
+}
+
+/* ========================================
+   VISIT APP BUTTON
+======================================== */
+
+.preview-visit-button {
+  min-width: 280px;
+
+  height: 52px;
+
+  margin-top: 40px;
+
+  padding: 0 25px;
+
+  border: 0;
+
+  border-radius: 9px;
+
+  background: #c80024;
+
+  color: white;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.preview-visit-button span {
+  margin-left: 8px;
+}
+
+.preview-visit-button:hover {
+  background: #dc0028;
+
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   ABOUT
+======================================== */
+
+.preview-about {
+  padding: 90px 24px;
+
+  background: #86000f;
+}
+
+.preview-section-heading {
+  max-width: 760px;
+
+  margin: 0 auto;
+}
+
+.preview-section-heading p {
+  max-width: 620px;
+
+  margin: 30px 0 0;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+.preview-feature-list {
+  max-width: 900px;
+
+  margin: 55px auto 0;
+
+  display: grid;
+
+  gap: 20px;
+}
+
+.preview-feature-card {
+  padding: 20px;
+
+  border-radius: 14px;
+
+  background: #68000a;
+}
+
+.preview-feature-card img {
+  width: 100%;
+  height: 300px;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+}
+
+.preview-feature-content {
+  padding: 25px 2px 8px;
+}
+
+.preview-feature-content > span {
+  font-size: 10px;
+
+  letter-spacing: 2px;
+}
+
+.preview-feature-content h3 {
+  margin: 8px 0;
+
+  font-size: 25px;
+}
+
+.preview-feature-content p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+.preview-secondary-button {
+  display: block;
+
+  height: 52px;
+
+  margin: 40px auto 0;
+
+  padding: 0 28px;
+
+  border: 0;
+
+  border-radius: 9px;
+
+  background: #c80024;
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.preview-secondary-button span {
+  margin-left: 8px;
+}
+
+/* ========================================
+   OPPORTUNITIES
+======================================== */
+
+.preview-opportunities {
+  padding: 90px 24px;
+
+  background: #100d0e;
+}
+
+.preview-opportunities .preview-section-heading {
+  margin-bottom: 55px;
+}
+
+.opportunity-card {
+  max-width: 900px;
+
+  margin: 0 auto 22px;
+
+  padding: 20px;
+
+  border-radius: 14px;
+
+  background: #74000b;
+}
+
+.opportunity-card img {
+  width: 100%;
+  height: 300px;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+}
+
+.opportunity-content > span {
+  display: block;
+
+  margin-top: 25px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.opportunity-content h3 {
+  margin: 10px 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 38px;
+
+  font-weight: 400;
+
+  line-height: 1.05;
+}
+
+.opportunity-content p {
+  max-width: 600px;
+
+  color: rgba(255, 255, 255, 0.68);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.opportunity-content button {
+  height: 50px;
+
+  margin-top: 12px;
+
+  padding: 0 22px;
+
+  border: 0;
+
+  border-radius: 9px;
+
+  background: white;
+
+  color: #171313;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.opportunity-content button span {
+  margin-left: 8px;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.preview-footer {
+  padding: 70px 24px 30px;
+
+  background: #0b0b0b;
+}
+
+.preview-footer-inner {
+  max-width: 1180px;
+
+  margin: 0 auto;
+}
+
+.preview-footer-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+}
+
+.preview-footer-brand img {
+  width: 43px;
+  height: 43px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+.preview-footer-brand strong {
+  display: block;
+
+  font-family: Georgia, serif;
+
+  font-size: 15px;
+
+  letter-spacing: 1px;
+}
+
+.preview-footer-brand small {
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 6px;
+
+  letter-spacing: 3px;
+}
+
+.preview-footer-description {
+  max-width: 500px;
+
+  margin-top: 25px;
+  margin-bottom: 45px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.preview-footer-links {
+  display: flex;
+
+  gap: 100px;
+}
+
+.preview-footer-links > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.preview-footer-links span {
+  margin-bottom: 4px;
+
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.preview-footer-links a {
+  color: rgba(255, 255, 255, 0.68);
+
+  font-size: 13px;
+
+  text-decoration: none;
+}
+
+.preview-footer-bottom {
+  margin-top: 60px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  color: rgba(255, 255, 255, 0.35);
+
+  font-size: 11px;
+}
+
+.preview-footer-bottom div {
+  display: flex;
+
+  gap: 20px;
+}
+
+.preview-footer-bottom a {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (min-width: 768px) {
+  .preview-hero {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .preview-hero-content {
+    margin-top: 100px;
+  }
+
+  .phone-preview {
+    width: 350px;
+  }
+
+  .phone-screen {
+    height: 740px;
+  }
+
+  .preview-about,
+  .preview-opportunities {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .preview-feature-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .preview-feature-card img {
+    height: 340px;
+  }
+
+  .opportunity-card img {
+    height: 340px;
+  }
+}
+
+/* ========================================
+   DESKTOP
+======================================== */
+
+@media (min-width: 1100px) {
+  .preview-hero {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 1fr 420px;
+
+    grid-template-rows: auto 1fr auto;
+
+    column-gap: 80px;
+
+    align-items: center;
+  }
+
+  .preview-header {
+    grid-column: 1 / -1;
+
+    grid-row: 1;
+  }
+
+  .preview-hero-content {
+    grid-column: 1;
+
+    grid-row: 2;
+
+    align-self: center;
+
+    margin-top: 0;
+  }
+
+  .phone-preview {
+    grid-column: 2;
+
+    grid-row: 2;
+
+    width: 360px;
+
+    justify-self: center;
+  }
+
+  .preview-visit-button {
+    grid-column: 1;
+
+    grid-row: 3;
+
+    justify-self: start;
+
+    margin-top: 0;
+  }
+
+  .preview-about {
+    padding-top: 130px;
+
+    padding-bottom: 130px;
+  }
+
+  .preview-feature-list {
+    max-width: 1180px;
+
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .preview-feature-card img {
+    height: 320px;
+  }
+
+  .preview-opportunities {
+    padding-top: 130px;
+
+    padding-bottom: 130px;
+  }
+
+  .opportunity-card {
+    max-width: 1180px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 45px;
+
+    align-items: center;
+  }
+
+  .opportunity-card img {
+    height: 420px;
+  }
+
+  .opportunity-content {
+    padding: 20px;
+  }
+
+  .preview-footer {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+}
+
+/* ========================================
+   LARGE DESKTOP
+======================================== */
+
+@media (min-width: 1400px) {
+  .preview-hero {
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+
+  .preview-hero-content h2,
+  .preview-section-heading h2 {
+    font-size: 96px;
+  }
+
+  .phone-preview {
+    width: 390px;
+  }
+
+  .phone-screen {
+    height: 780px;
+  }
+}

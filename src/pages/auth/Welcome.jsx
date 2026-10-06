@@ -1,29 +1,16 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-
-import WelcomeTransition from "../../components/WelcomeTransition/WelcomeTransition";
 
 import "./Welcome.css";
 
 const Welcome = () => {
   const navigate = useNavigate();
-  const [showTransition, setShowTransition] = useState(false);
 
   const handleExplore = () => {
     console.log("🔥 EXPLORE BUTTON CLICKED");
-    setShowTransition(true);
-  };
 
-  if (showTransition) {
-    return (
-      <WelcomeTransition
-        onComplete={() => {
-          navigate("/home", { replace: true });
-        }}
-      />
-    );
-  }
+    navigate("/app-preview");
+  };
 
   return (
     <main className="welcome-page">
